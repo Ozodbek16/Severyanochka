@@ -1,0 +1,47 @@
+nav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.category {
+  background: #70c05b;
+  display: flex;
+  border-radius: 4px;
+  padding: 8px;
+  color: white;
+  width: 140px;
+}
+
+.btn-bars {
+  width: 19px;
+  height: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 28px;
+}
+
+.bar {
+  width: 19px;
+  height: 1px;
+  background: #fff;
+}
+
+.logotip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logotip p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+}
+.category p {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
