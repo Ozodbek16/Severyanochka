@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap");
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+
 nav {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -10,6 +16,7 @@ nav {
   padding: 8px;
   color: white;
   width: 140px;
+  align-items: center;
 }
 
 .btn-bars {
@@ -44,4 +51,80 @@ nav {
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
+}
+
+.search_form {
+  background: transparent;
+  height: 40px;
+  border: 1px solid #70c05b;
+  border-radius: 4px;
+}
+
+.search_form input {
+  width: 300px;
+  height: 100%;
+  border: none;
+  padding-left: 16px;
+}
+
+.search_form input:focus {
+  outline: none;
+}
+
+.search_form button {
+  background: transparent;
+  margin-right: 8px;
+}
+
+.search_form input::placeholder {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #8f8f8f;
+}
+
+.cart,
+.Orders,
+.favorites {
+  width: 65px;
+}
+
+.cart a,
+.Orders a,
+.favorites a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  height: 50px;
+}
+
+.cart a p,
+.Orders a p,
+.favorites a p {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #414141;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    background: transparent;
+}
+
+.user .user-img{
+    margin-right: 10px;
+}
+
+.user .user-name{
+    margin-right: 29px;
 }
