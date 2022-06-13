@@ -6,5 +6,10 @@ router.get("/", (req, res) => {
     title: "Главная страница",
   });
 });
+router.get("/saved", (req, res) => {
+  res.render("saved.hbs", {
+    title: "Saved",
+  });
+});
 
 module.exports = router;

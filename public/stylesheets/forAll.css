@@ -1,0 +1,192 @@
+.top_glavni {
+  display: flex;
+}
+.top_glavni .top_glavni_box {
+  padding-left: 24px;
+  margin-top: 24px;
+}
+.top_glavni .top_glavni_box:nth-child(1) {
+  padding-left: 0;
+}
+.top_glavni .top_glavni_box a {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #414141;
+}
+.top_glavni .glavni_boxx p {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #8f8f8f;
+}
+.saved_title h1 {
+  margin-top: 27px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 150%;
+  color: #414141;
+}
+/* =================================================================== */
+.saved_filtr {
+  width: 100%;
+  background: #f3f2f1;
+  border-radius: 4px;
+  padding: 10px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: #414141;
+}
+
+.saved_filtr_right {
+  display: flex;
+}
+
+.saved_filtr_right .saved_sena,
+.saved_filtr_right .saved_sena_clean {
+  margin-left: 20px;
+  width: 124px;
+  height: 32px;
+  background: #f3f2f1;
+  border-radius: 4px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  text-align: center;
+  color: #606060;
+}
+
+.saved_filtr_right .saved_sena i,
+.saved_filtr_right .saved_sena_clean i {
+  font-size: 23px;
+}
+.saved_filtr_right .saved_sena {
+  width: 184px;
+  height: 32px;
+  background: #70c05b;
+  border-radius: 4px;
+  color: #f3f2f1;
+}
+
+/* ================================================================= */
+
+.filtr_bottom_price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.filtr_bottom_price h4 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000000;
+}
+.filtr_bottom_price button {
+  width: 85px;
+  height: 32px;
+  background: #f3f2f1;
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #606060;
+  padding: 4px;
+}
+.filtr_bottom_input form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 17px;
+  margin-bottom: 13px;
+}
+.filtr_bottom_input input {
+  width: 124px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #bfbfbf;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: #414141;
+}
+.filtr_bottom_input .range {
+  width: 100%;
+}
+
+input[type="range"] {
+  box-sizing: border-box;
+  appearance: none;
+  width: 400px;
+  margin: 0;
+  padding: 0 2px;
+  /* Add some L/R padding to ensure box shadow of handle is shown */
+  overflow: hidden;
+  border: 0;
+  outline: none;
+  background: linear-gradient(#70c05b, #70c05b) no-repeat center;
+  /* Use a linear gradient to generate only the 2px height background */
+  background-size: 100% 10px;
+  pointer-events: none;
+  border-radius: 10px !important;
+}
+input[type="range"]::-webkit-slider-thumb {
+  height: 28px;
+  width: 28px;
+  border-radius: 28px;
+  background-color: #70c05b;
+  position: relative;
+  margin: 5px 0;
+  /* Add some margin to ensure box shadow is shown */
+  cursor: pointer;
+  appearance: none;
+  pointer-events: all;
+  box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.25);
+}
+/* input[type="range"]::-webkit-slider-thumb::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 13px;
+  left: 100%;
+  width: 100%;
+  height: 2px;
+} */
+
+.multi-range {
+  position: relative;
+  height: 50px;
+  width: 100%;
+}
+.multi-range input[type="range"] {
+  position: absolute;
+}
+
+.multi-range input[type="range"]:nth-child(2) {
+  background: none;
+}
+

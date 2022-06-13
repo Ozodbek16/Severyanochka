@@ -2,11 +2,14 @@
 
 body {
   font-family: "Rubik", sans-serif;
+  background: #fbf8ec;
 }
 
 nav {
   padding-top: 20px;
   padding-bottom: 20px;
+  background: white;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .category {
@@ -120,6 +123,7 @@ nav {
   display: flex;
   align-items: center;
   background: transparent;
+<<<<<<< Updated upstream
 }
 
 .user .user-img {
@@ -161,3 +165,14 @@ nav {
   justify-content: space-between;
   width: 100%;
 }
+=======
+}
+
+.user .user-img {
+  margin-right: 10px;
+}
+
+.user .user-name {
+  margin-right: 29px;
+}
+>>>>>>> Stashed changes
