@@ -10,6 +10,7 @@ nav {
   padding-bottom: 20px;
   background: white;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .category {
@@ -123,7 +124,6 @@ nav {
   display: flex;
   align-items: center;
   background: transparent;
-<<<<<<< Updated upstream
 }
 
 .user .user-img {
@@ -142,7 +142,7 @@ nav {
 }
 
 .footer_nav a {
-  font-family: 'Rubik';
+  font-family: "Rubik";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -160,12 +160,10 @@ nav {
   height: 20px;
 }
 
-.social ul{
+.social ul {
   display: flex;
   justify-content: space-between;
   width: 100%;
-}
-=======
 }
 
 .user .user-img {
@@ -175,4 +173,14 @@ nav {
 .user .user-name {
   margin-right: 29px;
 }
->>>>>>> Stashed changes
+.bars {
+  position: absolute;
+  top: 72px;
+  width: 100%;
+  height: 248px;
+  background-color: #fff;
+  display: none;
+}
+.barss{
+  display: block;
+}
