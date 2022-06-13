@@ -45,6 +45,7 @@ nav {
   font-size: 16px;
   line-height: 150%;
 }
+
 .category p {
   font-family: "Rubik";
   font-style: normal;
@@ -115,16 +116,48 @@ nav {
   color: #414141;
 }
 
-.user{
-    display: flex;
-    align-items: center;
-    background: transparent;
+.user {
+  display: flex;
+  align-items: center;
+  background: transparent;
 }
 
-.user .user-img{
-    margin-right: 10px;
+.user .user-img {
+  margin-right: 10px;
 }
 
-.user .user-name{
-    margin-right: 29px;
+.user .user-name {
+  margin-right: 29px;
+}
+
+.footer_nav {
+  margin-left: 40px;
+  width: 630px;
+  justify-content: space-between;
+  margin-right: 140px;
+}
+
+.footer_nav a {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #414141;
+}
+
+.social {
+  width: 144px;
+  display: flex;
+}
+
+.social img {
+  width: 20px;
+  height: 20px;
+}
+
+.social ul{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
