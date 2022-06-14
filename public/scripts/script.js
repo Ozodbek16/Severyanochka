@@ -5,10 +5,15 @@ var target = document.querySelector(".price_first");
 
 let bars = document.querySelector(".bars");
 let btnbars = document.querySelector(".btn-bars");
-// bars.style.display = "none";
+
+bars.style.display = "none";
 
 btnbars.addEventListener("click", () => {
- 
+  if (bars.style.display == "none") {
+    bars.style.display = "block";
+  } else {
+    bars.style.display = "none";
+  }
 });
 
 var rangeValue = function () {

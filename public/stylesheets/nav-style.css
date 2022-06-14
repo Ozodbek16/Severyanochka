@@ -179,8 +179,25 @@ nav {
   width: 100%;
   height: 248px;
   background-color: #fff;
-  display: none;
-}
-.barss{
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
   display: block;
+  transition: 1s;
+}
+.bars .bars_nav ul {
+  margin-top: 40px;
+}
+.bars .bars_nav ul li {
+  margin-top: 24px;
+}
+.bars .bars_nav ul li a {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: #414141;
+  transition: all .3s ease;
+}
+.bars .bars_nav ul li a:hover {
+  color: #ff6633;
 }
