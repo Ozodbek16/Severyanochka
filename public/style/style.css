@@ -1,0 +1,315 @@
+.hero {
+  height: 200px;
+  background: url(/img/index_img/bcg_hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  margin-bottom: 80px;
+}
+
+.hero_text_item {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 150%;
+  color: #414141;
+  margin-left: 18px;
+}
+.special_title,
+.discount_title h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 150%;
+  color: #414141;
+}
+
+.discount_link {
+  align-self: flex-end;
+  height: 32px;
+}
+
+.discount_link_df span {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #606060;
+  margin-right: 16px;
+}
+
+/* section discount started */
+
+.cards {
+  margin-top: 40px;
+}
+
+.card {
+  width: 272px;
+  background: #fff;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+  border-radius: 4px;
+}
+
+.card_top {
+  position: relative;
+}
+
+.like {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #f3f2f1;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.discount_precent {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: #ff6633;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.discount_precent p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #fff;
+}
+
+.card_bottom {
+  padding: 8px;
+}
+
+.with_card_price,
+.without_card_price {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  color: #414141;
+}
+
+.with_card_text,
+.without_card_text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #bfbfbf;
+}
+
+.card_title {
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+.card_title h3 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #414141;
+}
+
+.card_stars {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.card_stars svg {
+  margin-right: 4px;
+}
+
+.card_btn_buy button {
+  width: 100%;
+  border: 1px solid #70c05b;
+  border-radius: 4px;
+  padding: 8px;
+  background: transparent;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #70c05b;
+  cursor: pointer;
+}
+
+.card_price_first {
+  margin-bottom: 26px;
+}
+
+.news {
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.old {
+  margin-bottom: 120px;
+}
+
+.special {
+  margin-bottom: 120px;
+}
+
+.special_title {
+  margin-bottom: 40px;
+}
+
+.left_special_card,
+.right_special_card {
+  width: 584px;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 31px 8px 40px;
+  background: #fcd5ba;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.right_special_card {
+  background: #e5ffde;
+}
+
+.left_special_card:hover,
+.right_special_card:hover {
+  box-shadow: 0px 8px 16px rgba(202, 147, 96, 0.5);
+}
+
+.special_card_title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  color: #414141;
+  margin-bottom: 6px;
+}
+
+.special_card_text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #414141;
+}
+
+.map_item {
+  background: #f3f2f1;
+  border-radius: 4px;
+  padding: 8px;
+  margin-right: 24px;
+  margin-bottom: 24px;
+}
+
+.map_item a {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #606060;
+}
+
+.active_map_item {
+  background: #70c05b;
+}
+
+.active_map_item a {
+  color: #ffffff;
+}
+
+.map_google {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 120px;
+}
+
+.stat_cards {
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+.stat_card {
+  width: 376px;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.stat_card:hover {
+  box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+}
+
+.stat_card_bottom {
+  padding: 10px;
+}
+
+.stat_card_date {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #8f8f8f;
+  margin-bottom: 10px;
+}
+
+.stat_card_title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  color: #414141;
+  margin-bottom: 10px;
+}
+
+.stat_card_info {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #414141;
+  margin-bottom: 10px;
+}
+
+.stat_card_btn {
+  background: #e5ffde;
+  border-radius: 4px;
+  padding: 8px;
+  border: none;
+}
+
+.stat_card_btn p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #70c05b;
+  width: 134px;
+}
+
+.active_stat_btn {
+  background: #70c05b;
+}
+
+.active_stat_btn p {
+  color: #fff;
+}
