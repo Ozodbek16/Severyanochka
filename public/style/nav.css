@@ -1,0 +1,161 @@
+nav {
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 13px 0;
+  background: #fff;
+}
+
+.btn_catalog {
+  background: #70c05b;
+  border-radius: 4px;
+  border: none;
+  padding: 8px;
+  margin-left: 40px;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.btn_catalog_img {
+  margin-right: 10px;
+}
+
+.btn_catalog_text {
+  width: 92px;
+  height: 24px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #fff;
+}
+
+.hover_catalog {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: none;
+  height: 248px;
+  background: #fff;
+  padding: 40px 0;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.catalogs_item {
+  margin-bottom: 24px;
+}
+
+.catalog_mb {
+  margin-bottom: 0;
+}
+
+.catalogs_link {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: #414141;
+}
+
+.catalogs_link:hover {
+  color: #ff6633;
+}
+
+.input_search {
+  border: 1px solid #70c05b;
+  border-radius: 4px;
+  padding: 8px 8px 8px 16px;
+  margin-right: 45px;
+}
+
+.input_search input {
+  width: 317px;
+  border: none;
+  margin-right: 8px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.input_search input:focus{
+    outline: none;
+}
+
+.user_btns_link{
+  position: relative;
+}
+
+.user_btns_link_img {
+  height: 32px;
+}
+
+.user_btns_link_count{
+  position: absolute;
+  top: -10px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: red;
+  color: #fff;
+}
+.user_btns_link_span {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 110%;
+  color: #414141;
+}
+
+.user_btns_li {
+  margin-right: 24px;
+}
+
+.user_btns_li:nth-child(3) {
+  margin-right: 0;
+}
+
+.btn_user {
+  border: none;
+  background: transparent;
+  margin-left: 40px;
+  cursor: pointer;
+}
+
+.btn_user_first_img {
+  margin-right: 10px;
+}
+
+.btn_user_name {
+  width: 85px;
+  text-align: start;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.btn_sign_in {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ff6633;
+  border-radius: 4px;
+  border: none;
+  margin-left: 24px;
+  cursor: pointer;
+}
+
+.btn_sign_in span {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #fff;
+  text-align: center;
+  width: 109px;
+  margin-right: 10px;
+}

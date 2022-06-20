@@ -150,6 +150,12 @@
   line-height: 150%;
   color: #70c05b;
   cursor: pointer;
+  transition: all .3s;
+}
+
+.card_btn_buy button:hover{
+  background: #70c05b;
+  color: #fff;
 }
 
 .card_price_first {
@@ -304,6 +310,15 @@
   line-height: 150%;
   color: #70c05b;
   width: 134px;
+  transition: all .3s;
+}
+
+.stat_card_btn:hover{
+  background: #70c05b;
+}
+
+.stat_card_btn:hover p{
+  color: #fff;
 }
 
 .active_stat_btn {
