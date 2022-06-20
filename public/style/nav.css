@@ -37,6 +37,7 @@ nav {
   background: #fff;
   padding: 40px 0;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  z-index: 99999;
 }
 
 .catalogs_item {

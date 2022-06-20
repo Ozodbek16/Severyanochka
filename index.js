@@ -14,8 +14,10 @@ app.set("views", "./views");
 app.use(express.static(path.join(__dirname, "public")));
 
 const homeR = require("./routes/homeRouter");
+const catalogR = require("./routes/catalogRouter");
 
 app.use("/", homeR);
+app.use("/catalog", catalogR);
 
 try {
   const port = normalizePort(process.env.port || 3000);
