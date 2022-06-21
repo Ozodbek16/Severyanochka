@@ -1,0 +1,154 @@
+.container {
+  max-width: 1208px;
+  margin: auto;
+}
+body {
+  background: #fbf8ec;
+}
+.header_saved {
+  padding-top: 27px;
+  padding-bottom: 121px;
+}
+.header_saved_directions {
+  margin-bottom: 47px;
+}
+.header_saved_main {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #414141;
+  margin-right: 24px;
+}
+.header_saved_next {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #8f8f8f;
+  margin-left: 24px;
+}
+
+.header_title {
+  display: flex;
+}
+
+.title_about {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 150%;
+  color: #414141;
+}
+
+.title_text_about {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  color: #ff6633;
+}
+
+.info_company {
+  padding-bottom: 83px;
+  display: flex;
+}
+
+.info_company_card:first-child {
+  width: 570px;
+  margin-right: 75px;
+}
+
+.info_company_card:nth-child(2) {
+  margin-right: 75px;
+}
+
+.company_card_light {
+  display: flex;
+}
+
+.card1_light_text {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  color: #414141;
+  margin-left: 10px;
+  margin-bottom: 16px;
+}
+
+.company_card_bold {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  color: #414141;
+  margin-left: 38px;
+}
+
+.welcome {
+  display: flex;
+  padding-left: 75px;
+  padding-right: 98px;
+}
+
+.welcome_text {
+  width: 805px;
+  height: 96px;
+  background: #e5ffde;
+  border-radius: 16px;
+  padding: 30px 40px;
+  margin-left: 80px;
+}
+
+.welcome_text_says {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  align-items: center;
+  color: #70c05b;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 1100px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 992) {
+  .container992 {
+    width: 960px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 736px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 550px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    width: 336px;
+    margin: auto;
+  }
+}
+

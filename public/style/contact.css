@@ -1,0 +1,342 @@
+.container {
+  max-width: 1208px;
+  margin: auto;
+}
+body {
+  background: #fbf8ec;
+}
+.header {
+  padding: 27px 0 120px;
+}
+
+.header_directions {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.header_directions_main {
+  margin-right: 24px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #414141;
+}
+
+.header_directions_next {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  margin-left: 24px;
+  color: #8f8f8f;
+}
+
+.header_title {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 150%;
+  color: #414141;
+  margin-bottom: 40px;
+}
+.header_requests {
+  display: flex;
+  align-items: center;
+}
+
+.requests_info {
+  margin-right: 84px;
+}
+
+.header_requests_text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.requests_text {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
+  color: #414141;
+  margin-left: 11px;
+}
+
+.header_requests_number,
+.header_requests_number a {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  text-decoration-line: underline;
+  color: #414141;
+  margin-left: 20px;
+}
+
+.shops_title {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 150%;
+  margin-bottom: 48px;
+  color: #414141;
+}
+
+.location_nav_name.active {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #ffffff;
+  background: #70c05b;
+  border-radius: 4px;
+  padding: 8px;
+  border: none;
+}
+.location_nav_name {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #606060;
+  background: #f3f2f1;
+  border-radius: 4px;
+  padding: 8px;
+  border: none;
+  margin-right: 24px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.location_nav {
+  margin-bottom: 32px;
+}
+
+.tab_contents_adresses {
+  display: flex;
+  align-items: center;
+  margin-bottom: 33px;
+}
+
+.contents_adresses_card {
+  margin-right: 83px;
+}
+
+.addresses_card_address {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.card_address_text {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #414141;
+  margin-left: 11px;
+}
+
+.addresses_card_phone {
+  display: flex;
+  align-items: center;
+  margin-top: 11px;
+}
+
+.card_phone_number {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  text-decoration-line: underline;
+  color: #414141;
+  margin-left: 11px;
+}
+.tab_contents_map,
+.contents_map {
+  border-radius: 4px;
+  width: 1208px;
+  height: 354px;
+  margin-bottom: 80px;
+}
+
+.shops_location {
+  overflow: hidden;
+}
+
+.content_changes {
+  display: none;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1100px;
+    margin: auto;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    width: 950px;
+    margin: auto;
+  }
+  .contents_adresses_card {
+    margin-right: 55px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 736px;
+    margin: auto;
+  }
+  .header_directions_main {
+    margin-right: 16px;
+  }
+  .header_directions_next {
+    margin-left: 16px;
+  }
+  .header_directions {
+    margin-bottom: 19px;
+  }
+  .header_title {
+    margin-bottom: 32px;
+    font-size: 48px;
+  }
+  .requests_text {
+    font-size: 18px;
+    margin-left: 10px;
+  }
+  .header_requests_number a {
+    font-size: 18px;
+  }
+  .header_requests_text {
+    margin-bottom: 8px;
+  }
+  .header {
+    padding: 19px 0 100px;
+  }
+  .shops_title {
+    margin-bottom: 40px;
+    font-size: 24px;
+  }
+  .card_address_text {
+    font-size: 14px;
+  }
+  .contents_adresses_card {
+    margin-right: 24px;
+  }
+  .card_phone_number {
+    font-size: 14px;
+  }
+  .tab_contents_map,
+  .contents_map {
+    width: 736px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 550px;
+    margin: auto;
+  }
+  .requests_info {
+    margin-right: 32px;
+  }
+  .tab_contents_adresses {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .contents_adresses_card {
+    margin-right: 110px;
+    margin-bottom: 30px;
+  }
+  .tab_contents_map,
+  .contents_map {
+    width: 550px;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    width: 336px;
+  }
+  .header {
+    padding: 14px 0 80px;
+  }
+  .header_directions_main {
+    font-size: 8px;
+    margin-right: 12px;
+  }
+  .header_directions_next {
+    margin-left: 12px;
+    font-size: 8px;
+  }
+  .header_directions {
+    margin-bottom: 14px;
+  }
+  .header_title {
+    font-size: 36px;
+  }
+  .header_requests {
+    flex-wrap: wrap;
+  }
+  .header_requests_text {
+    margin-bottom: 4px;
+  }
+  .requests_info {
+    margin-bottom: 16px;
+  }
+  .shops_title {
+    margin-bottom: 32px;
+    font-size: 36px;
+  }
+  .contents_adresses_card {
+    margin-right: 8px;
+  }
+  .tab_contents_adresses {
+    margin-bottom: 0px;
+  }
+  .tab_contents_map,
+  .contents_map {
+    margin-bottom: 40px;
+    width: 336px;
+  }
+  .location_nav_name {
+    margin-bottom: 22px;
+    width: 115px;
+  }
+}
