@@ -1,4 +1,4 @@
-const btnCatalog = document.querySelector('.btn_catalog');
+const btnCatalog = document.querySelector('.btn_catalog_svg');
 const btnHoverCatalog = document.querySelector('.hover_catalog');
 const imgBtnCatalog = document.querySelector('.btn_catalog_img');
 

@@ -1,6 +1,7 @@
 const express = require("express");
 const { create } = require("express-handlebars");
 const path = require("path");
+const jamoliddin = require("jamoliddin9717");
 
 const app = express();
 const hbs = create({
@@ -30,7 +31,12 @@ app.use("/vacansy", vacansyRouter);
 try {
   const port = normalizePort(process.env.port || 3000);
   app.listen(port, () => {
-    console.log(`Server ${port} porti bilan eshitiliyapti.`);
+    jamoliddin.consoleDesign(
+      "success",
+      `Server ${port} porti bilan eshitiliyapti.`
+    );
+
+    console.log(jamoliddin.date("MMM Do YY"));
   });
 } catch (error) {
   console.error(error);

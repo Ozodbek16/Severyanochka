@@ -225,6 +225,7 @@
   padding: 8px;
   margin-right: 24px;
   margin-bottom: 24px;
+  transition: all .3s;
 }
 
 .map_item a {
@@ -233,6 +234,14 @@
   font-size: 12px;
   line-height: 150%;
   color: #606060;
+}
+
+.map_item:hover{
+  background: #70c05b;
+}
+
+.map_item:hover a{
+  color: #fff;
 }
 
 .active_map_item {

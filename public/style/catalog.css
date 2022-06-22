@@ -26,6 +26,33 @@
   position: absolute;
   border: 14px;
 }
+
+.ordered_title_directions {
+  display: flex;
+  align-items: center;
+  margin-bottom: 27px;
+  padding: 27px 0 0;
+}
+
+.ordered_title_directions_main {
+  margin-right: 27.5px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #414141;
+}
+
+.ordered_title_directions_next {
+  margin-left: 27.5px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #8f8f8f;
+}
 .catalog_images img {
   z-index: 99;
   border: 14px;
