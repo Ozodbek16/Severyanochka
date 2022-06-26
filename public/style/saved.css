@@ -96,6 +96,7 @@ body {
   display: flex;
   padding-left: 75px;
   padding-right: 98px;
+  margin-bottom: 80px;
 }
 
 .welcome_text {
@@ -103,7 +104,7 @@ body {
   height: 96px;
   background: #e5ffde;
   border-radius: 16px;
-  padding: 30px 40px;
+  padding: 30px 10px;
   margin-left: 80px;
 }
 
@@ -129,6 +130,14 @@ body {
     width: 960px;
     margin: auto;
   }
+  .welcome_text {
+    width: 351px;
+    height: 96px;
+    background: #e5ffde;
+    border-radius: 16px;
+    padding: 22px 31px;
+    /* margin-left: 80px; */
+}
 }
 
 @media (max-width: 768px) {
@@ -151,4 +160,3 @@ body {
     margin: auto;
   }
 }
-

@@ -77,11 +77,11 @@ nav {
   line-height: 150%;
 }
 
-.input_search input:focus{
-    outline: none;
+.input_search input:focus {
+  outline: none;
 }
 
-.user_btns_link{
+.user_btns_link {
   position: relative;
 }
 
@@ -89,7 +89,7 @@ nav {
   height: 32px;
 }
 
-.user_btns_link_count{
+.user_btns_link_count {
   position: absolute;
   top: -10px;
   right: 0;
@@ -102,6 +102,7 @@ nav {
   background: red;
   color: #fff;
 }
+
 .user_btns_link_span {
   font-style: normal;
   font-weight: 400;
@@ -159,4 +160,47 @@ nav {
   text-align: center;
   width: 109px;
   margin-right: 10px;
+}
+
+
+.lg {
+  display: none;
+}
+
+.xl {
+  display: inline-block;
+}
+
+.cart_top img {
+  width: 224px;
+}
+
+@media (max-width: 992px) {
+  .lg {
+    display: inline-block;
+  }
+
+  .xl {
+    display: none;
+  }
+
+  .btn_catalog_text {
+    display: none;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .card_top img {
+    width: 224px;
+  }
+
+  .btn_sign_in span {
+    display: none;
+  }
+
+  .input_search input {
+    width: auto;
+  }
 }

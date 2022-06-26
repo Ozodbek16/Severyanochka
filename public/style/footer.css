@@ -18,30 +18,40 @@ footer {
   color: #414141;
 }
 
-.footer_list_item a:hover{
-    color: #FF6633;
+.footer_list_item a:hover {
+  color: #FF6633;
 }
 
-.footer_social_networks{
-    margin-right: 40px;
+.footer_social_networks {
+  margin-right: 40px;
 }
 
-.social_item{
-    margin-left: 18px;
+.social_item {
+  margin-left: 18px;
 }
 
-.social_item:first-child{
-    margin-left: 0;
+.social_item:first-child {
+  margin-left: 0;
 }
 
-.img_tel{
-    margin-right: 10px;
+.img_tel {
+  margin-right: 10px;
 }
 
-.footer_tel_link{
-    font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 150%;
-color: #414141;
+.footer_tel_link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #414141;
+}
+
+
+@media (max-width: 992px) {
+  .footer_menu {
+    width: 311px;
+  }
+  .footer_list_item{
+    margin-left: 16px;
+  }
 }
