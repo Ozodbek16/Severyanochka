@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-    {{> head}}
+{{> head}}
 
 <body>
-        {{> nav}}
-        {{{body}}}
-        {{> footer}}
+    {{> nav}}
+    {{{body}}}
+    {{> footer}}
 </body>
+<script>
+    document.querySelector('body').addEventListener('contextmenu', (e) => {
+        e.preventDefault()
+    })
+</script>
 
 </html>

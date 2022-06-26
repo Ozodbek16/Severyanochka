@@ -51,7 +51,20 @@ footer {
   .footer_menu {
     width: 311px;
   }
-  .footer_list_item{
+
+  .footer_list_item {
     margin-left: 16px;
+  }
+
+  .social_item:nth-child(3) {
+    margin: 0;
+  }
+
+  .footer_social_list {
+    width: 56px;
+  }
+
+  .social_item {
+    margin-left: 10px;
   }
 }
