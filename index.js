@@ -19,6 +19,7 @@ const orderRouter = require("./routes/order");
 const savedRouter = require("./routes/saved");
 const contactRouter = require("./routes/contact");
 const vacansyRouter = require("./routes/vacansy");
+const Favorites = require("./routes/Favorites");
 
 app.use("/", homeR);
 app.use("/catalog", catalogR);
@@ -26,6 +27,7 @@ app.use("/order", orderRouter);
 app.use("/saved", savedRouter);
 app.use("/contact", contactRouter);
 app.use("/vacansy", vacansyRouter);
+app.use("/favorites", Favorites);
 
 try {
   const port = normalizePort(process.env.port || 3000);
