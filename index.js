@@ -29,6 +29,7 @@ const contactRouter = require("./routes/contact");
 const vacansyRouter = require("./routes/vacansy");
 const favorites = require("./routes/favorites");
 const product = require("./routes/product");
+const adminRouter = require("./routes/admin");
 
 app.use("/", homeR);
 app.use("/catalog", catalogR);
@@ -38,6 +39,7 @@ app.use("/contact", contactRouter);
 app.use("/vacansy", vacansyRouter);
 app.use("/favorites", favorites);
 app.use("/product", product);
+app.use("/admin", adminRouter);
 
 try {
   const port = normalizePort(process.env.port || 3000);
