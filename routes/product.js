@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const upload = require('../middleware/upload')
 const Mongo = require('../model/Mongo')
+const Joi = require('joi')
+
+
 router.get("/add", (req, res) => {
   res.render("add", {
     title: "add",
@@ -9,6 +12,12 @@ router.get("/add", (req, res) => {
 });
 
 router.post('/add', upload.single('img'), async (req, res) => {
+  const error = loginValidation(req.body)
+  if (!!error) {
+    console.log(error);
+    res.redirect('/admin/product/add')
+    return
+}
   const { name, price, discount, star, brand, country, catalog, weight } = req.body
   
   const product = new Mongo({
@@ -18,5 +27,19 @@ router.post('/add', upload.single('img'), async (req, res) => {
   await product.save()
   res.redirect('/product/add')
 })
+
+function loginValidation(val) {
+  const schema = Joi.object({
+      name: Joi.string().required(),
+      username: Joi.string().required(),
+      surname: Joi.string(),
+      adminImg: Joi.string(),
+      password: Joi.string().required()
+  })
+
+  const result = schema.validate(val)
+
+  return result.error
+}
 
 module.exports = router;

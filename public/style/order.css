@@ -10,7 +10,6 @@ body {
   background: #fbf8ec;
 }
 
-
 .container {
   max-width: 1208px;
   margin: auto;
@@ -115,6 +114,7 @@ body {
   height: 40px;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .price_date_text {
@@ -133,7 +133,10 @@ body {
   height: 40px;
   border: none;
   background: transparent;
-} 
+  left: -20px;
+  cursor: pointer;
+}
+
 
 :focus {
   outline: none;
@@ -388,7 +391,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   display: flex;
   margin-bottom: 60px;
 }
-
 
 @media (max-width: 1200px) {
   .container {

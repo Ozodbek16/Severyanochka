@@ -45,9 +45,10 @@ const savedRouter = require("./routes/saved");
 const contactRouter = require("./routes/contact");
 const vacansyRouter = require("./routes/vacansy");
 const favorites = require("./routes/favorites");
-const product = require("./routes/product");
 const authAdminRouter = require("./routes/admin/auth");
 const adminRouter = require("./routes/admin/admin");
+const card = require('./routes/card')
+
 
 app.use(userMiddleware)
 app.use("/", homeR);
@@ -57,8 +58,8 @@ app.use("/saved", savedRouter);
 app.use("/contact", contactRouter);
 app.use("/vacansy", vacansyRouter);
 app.use("/favorites", favorites);
-app.use("/product", product);
 app.use("/api", authAdminRouter);
+app.use('/card' , card)
 app.use("/admin", authMiddleware, adminRouter);
 
 try {

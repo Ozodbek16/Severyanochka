@@ -1,0 +1,395 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+.container {
+  width: 1208px;
+  margin: auto;
+}
+
+.ordered_title_directions {
+  display: flex;
+  align-items: center;
+  margin-bottom: 27px;
+  padding: 27px 0 0;
+}
+.ordered_title_directions_main:first-child {
+  margin-left: 0;
+}
+.ordered_title_directions_main {
+  margin-right: 27.5px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #414141;
+  margin-left: 24.5px;
+}
+
+.ordered_title_directions_next {
+  margin-left: 27.5px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #8f8f8f;
+}
+
+.card-title {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  /* identical to box height, or 36px */
+
+  /* Main/onSurface */
+
+  color: #414141;
+}
+.art {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  /* identical to box height, or 18px */
+
+  /* Main/onSurface */
+
+  color: #414141;
+}
+.instruments {
+  display: flex;
+  align-items: center;
+  margin-top: 22.5px;
+}
+.otziv {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  /* identical to box height, or 21px */
+
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+  /* text-decoration-line: underline; */
+
+  /* Main/onSurface */
+
+  color: #414141;
+}
+
+.send {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  /* or 18px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* Grayscale / Hardest */
+
+  color: #606060;
+  display: flex;
+  align-items: center;
+}
+
+.save {
+  display: flex;
+  align-items: center;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  /* or 18px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* Grayscale / Hardest */
+
+  color: #606060;
+}
+
+.icon {
+  margin-left: 32px;
+  margin-right: 8px;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.mySwiper,
+.mySwiper2{
+  margin-top: 21.5px;
+}
+
+
+.buy-info {
+  padding: 0px 40px;
+}
+.buy {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.cost {
+  display: flex;
+  flex-direction: column;
+}
+
+.buy .cost {
+  display: flex;
+}
+.buy .cost .price {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
+  /* identical to box height, or 36px */
+
+  display: flex;
+  align-items: center;
+
+  /* Grayscale / Hardest */
+
+  color: #606060;
+}
+
+.buy .cost .default-cost {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  /* identical to box height, or 18px */
+
+  /* Grayscale / Light */
+
+  color: #bfbfbf;
+}
+
+.buy .cost-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.buy .cost-2 .sale {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 150%;
+  /* identical to box height, or 54px */
+
+  /* Main/onSurface */
+
+  color: #414141;
+}
+
+.buy .cost-2 .sale-cost {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  /* identical to box height, or 18px */
+
+  /* Grayscale / Light */
+
+  color: #bfbfbf;
+  display: flex;
+  align-items: center;
+}
+
+.buy-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 16px;
+  background: #ff6633;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 17.5px;
+}
+.buy-button h2 {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
+  /* or 36px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* Main/onPrimary */
+
+  color: #ffffff;
+  text-align: center;
+}
+
+.bonus {
+  display: flex;
+  justify-content: center;
+  margin-top: 18.6px;
+  align-items: center;
+}
+
+.bonus-info {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  /* or 18px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* Main/Secondary */
+
+  color: #70c05b;
+  margin-left: 8px;
+}
+
+.cost-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 21.5px;
+}
+
+.cost_message {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  /* or 18px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* Grayscale / Hardest */
+
+  color: #606060;
+  margin-left: 12.5px;
+}
+
+.product-info {
+  margin-top: 32px;
+}
+
+.brend,
+.country,
+.package {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 59px 4px 8px;
+}
+
+.brend,
+.package {
+  background: #f3f2f1;
+}
+
+.brend-title,
+.country-title,
+.package-title {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  /* identical to box height, or 18px */
+
+  /* Main/onSurface */
+
+  color: #414141;
+}
+
+.brend-name,
+.country-name,
+.package-info {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 150%;
+  /* identical to box height, or 18px */
+
+  /* Main/onSurface */
+
+  color: #414141;
+}
+
+.Similar {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+
+  /* Grayscale / Hardest */
+
+  color: #606060;
+}
+
+.similar-card {
+  background: #ffffff;
+  /* Default/XS */
+
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.cimilar-card-cost {
+  padding: 10px;
+  margin-right: 82px;
+
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  /* identical to box height, or 27px */
+
+  /* Main/onSurface */
+
+  color: #414141;
+}
