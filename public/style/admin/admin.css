@@ -315,6 +315,7 @@
     position: absolute;
     top: 0px;
     left: 180px;
+    padding: 0;
   }
   .down_status {
     z-index: 99 !important;
@@ -432,6 +433,9 @@
   
   .custom_card_item {
     background: #ffffff;
+    margin-right: 15px;
+    margin-left: 15px;
+    border-radius: 4px;
   }
   
   .custom_card_item_img {

@@ -131,6 +131,7 @@ nav {
   background: transparent;
   margin-left: 40px;
   cursor: pointer;
+  position: relative;
 }
 
 .btn_user_first_img {
@@ -169,7 +170,6 @@ nav {
   margin-right: 10px;
 }
 
-
 .lg {
   display: none;
 }
@@ -180,6 +180,35 @@ nav {
 
 .cart_top img {
   width: 224px;
+}
+
+.btn_user_first_img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.dropdown{
+  padding: 5px;
+  width: 100%;
+  position: absolute;
+  bottom: -150%;
+  background: #fff;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.dropdown_item:first-child{
+  margin-top: 0;
+}
+
+.dropdown_item{
+  margin-top: 8px;
+}
+
+.arrow{
+  transition: .3s;
 }
 
 @media (max-width: 992px) {

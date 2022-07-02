@@ -35,6 +35,7 @@ app.use(session({
 }))
 
 const authMiddleware = require('./middleware/auth')
+const userMiddleware = require('./middleware/user')
 
 
 const homeR = require("./routes/homeRouter");
@@ -48,6 +49,7 @@ const product = require("./routes/product");
 const authAdminRouter = require("./routes/admin/auth");
 const adminRouter = require("./routes/admin/admin");
 
+app.use(userMiddleware)
 app.use("/", homeR);
 app.use("/catalog", catalogR);
 app.use("/order", orderRouter);

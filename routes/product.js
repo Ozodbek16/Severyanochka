@@ -13,7 +13,7 @@ router.post('/add', upload.single('img'), async (req, res) => {
   
   const product = new Mongo({
     name, price, discount, star, brand, country, catalog, weight,
-    img: '/img/product-img/'+req.file.filename
+    img: '/img/product-img/'+ req.file.filename
   })
   await product.save()
   res.redirect('/product/add')

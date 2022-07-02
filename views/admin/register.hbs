@@ -1,4 +1,22 @@
-<form action="/api/register">
-<input type="text" placeholder="">
-<button type="submit">Submit</button>
+<form action="/api/register" enctype="multipart/form-data"  method="post">
+  <label for="username">Username</label>
+  <br />
+  <input type="text" required placeholder="Username" name="username" id="username" />
+  <br />
+  <br />
+  <label for="name">Name</label>
+  <br />
+  <input type="text" required placeholder="Name" id="name" name="name" />
+  <br><br>
+  <label for="surname">Surname</label>
+  <br>
+  <input type="text" name="surname" id="surname" placeholder="Surname">
+  <br><br>
+  <input type="file" required name="img" id="img">
+  <br><br>
+  <label for="password">Password</label>
+  <br>
+  <input type="text" required name="password" id="pasword">
+  <br><br>
+  <button type="submit">Submit</button>
 </form>

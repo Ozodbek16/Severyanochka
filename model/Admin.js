@@ -13,13 +13,13 @@ const adminSchema = new Schema({
     surname: {
         type: String,
     },
-    adminImg: {
+    img: {
         type: String,
         default: '/img/default-img-ava.jpg'
     },
     password: {
         type: String,
-        minlength: 6,
+        minlength: 8,
         required: true
     }
 })
