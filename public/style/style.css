@@ -72,6 +72,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  border: none;
 }
 
 .discount_precent {
@@ -124,6 +125,7 @@
   font-size: 16px;
   line-height: 150%;
   color: #414141;
+  text-align: left;
 }
 
 .card_stars {
