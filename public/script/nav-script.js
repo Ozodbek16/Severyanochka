@@ -28,3 +28,17 @@ if (profileBtn !== null) {
     }
   });
 }
+
+const btnSign = document.querySelector('.btn_sign_in');
+
+if (!!btnSign) {
+  const login = document.querySelector('.login-body');
+  btnSign.addEventListener('click', (e) => {
+    login.style.display = 'flex'
+  })
+
+  const closeBtn = document.querySelector('.close_btn');
+  closeBtn.addEventListener('click',(e)=>{
+    login.style.display = 'none'
+  })
+}

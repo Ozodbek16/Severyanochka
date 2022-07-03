@@ -9,16 +9,16 @@
   height: 100vh;
   width: 100vw;
   z-index: 999;
+  transition: .5s;
 }
 
 .login-form-div {
   width: 420px;
   background: #ffffff;
-  /* Primary / L */
-
   box-shadow: 8px 16px 32px rgba(255, 102, 51, 0.2);
   border-radius: 4px;
   padding: 72px 80px 44px 80px;
+  position: relative;
 }
 
 h3 {
@@ -27,12 +27,7 @@ h3 {
   font-weight: 700;
   font-size: 24px;
   line-height: 150%;
-  /* identical to box height, or 36px */
-
   text-align: center;
-
-  /* Main/onSurface */
-
   color: #414141;
 }
 
@@ -43,10 +38,6 @@ h3 {
   font-weight: 400;
   font-size: 18px;
   line-height: 150%;
-  /* identical to box height, or 27px */
-
-  /* Grayscale / Hard */
-
   color: #8f8f8f;
 }
 
@@ -78,6 +69,7 @@ h3 {
 .input-password input:focus {
   outline: none;
 }
+
 .input-password {
   margin-top: 32px;
 }
@@ -91,17 +83,67 @@ h3 {
   font-weight: 400;
   font-size: 24px;
   line-height: 150%;
-  /* identical to box height, or 36px */
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-
-  /* Main / Primary */
-
   color: #ff6633;
   padding: 16px;
   margin-top: 32px;
   cursor: pointer;
+}
+
+.close_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 8px;
+  width: 40px;
+  height: 40px;
+  background: #F3F2F1;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.bottom_meniki {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.bottom_meniki .left button {
+  background: transparent;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  display: flex;
+  border: 1px solid #70C05B;
+  border-radius: 4px;
+  padding: 8px;
+  gap: 8px;
+}
+
+.bottom_meniki .left button a {
+  align-items: center;
+  text-align: center;
+  color: #70C05B;
+}
+
+.bottom_meniki .right a {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #606060;
 }
