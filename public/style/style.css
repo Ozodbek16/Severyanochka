@@ -150,7 +150,7 @@
   line-height: 150%;
   color: #70c05b;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .card_btn_buy button:hover {
@@ -191,15 +191,21 @@
   background: #fcd5ba;
   border-radius: 4px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .right_special_card {
   background: #e5ffde;
+  transition: 0.3s;
 }
 
-.left_special_card:hover,
-.right_special_card:hover {
+.left_special_card:hover {
   box-shadow: 0px 8px 16px rgba(202, 147, 96, 0.5);
+  transform: scale(1.03);
+}
+.right_special_card:hover {
+  box-shadow: 0px 8px 16px #c2fcb4;
+  transform: scale(1.03);
 }
 
 .special_card_title {
@@ -225,7 +231,7 @@
   padding: 8px;
   margin-right: 24px;
   margin-bottom: 24px;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .map_item a {
@@ -268,10 +274,12 @@
   background: #fff;
   border-radius: 4px;
   overflow: hidden;
+  transition: 0.3s;
 }
 
 .stat_card:hover {
   box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+  transform: scale(1.05);
 }
 
 .stat_card_bottom {
@@ -309,6 +317,7 @@
   background: #e5ffde;
   border-radius: 4px;
   padding: 8px;
+  cursor: pointer;
   border: none;
 }
 
@@ -319,7 +328,7 @@
   line-height: 150%;
   color: #70c05b;
   width: 134px;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .stat_card_btn:hover {
@@ -329,15 +338,6 @@
 .stat_card_btn:hover p {
   color: #fff;
 }
-
-.active_stat_btn {
-  background: #70c05b;
-}
-
-.active_stat_btn p {
-  color: #fff;
-}
-
 
 @media (max-width: 992px) {
   .card {

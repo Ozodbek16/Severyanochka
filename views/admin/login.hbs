@@ -1,7 +1,17 @@
-<form action="/api/login" method="post">
-<h2>Log in</h2>
-  <input type="text" name="username" placeholder="name" required />
-  <input type="text" name="password" placeholder="password" />
-  <button type="submit">Submit</button>
-  <a href="/api/register">Sign up</a>
-</form>
+<link rel="stylesheet" href="/style/userLogin.css">
+<div class="login-body">
+
+  <form class="login-form-div" style="display: flex;flex-direction: column;  width: 300px;" action="/api/login"
+    method="post">
+    <h3>Вход</h3>
+    <label for="name" class="name_label">Имя</label>
+    <input class="name_admin" type="text" name="username" required />
+    <br>
+    <label for="password" class="password_label">Пароль</label>
+    <input class="password_admin" type="text" name="password" required />
+    <button class="log_in" type="submit">Вход</button>
+    <a class="sign-admin" href="/api/register">Регистрация</a>
+    <a class="a" href="#!">Забыли пароль?</a>
+    <br>
+  </form>
+</div>

@@ -133,7 +133,7 @@ body {
   height: 40px;
   border: none;
   background: transparent;
-  left: -20px;
+  /* left: -20px; */
   cursor: pointer;
 }
 
