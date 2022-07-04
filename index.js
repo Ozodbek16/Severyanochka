@@ -48,6 +48,7 @@ const favorites = require("./routes/favorites");
 const authAdminRouter = require("./routes/admin/auth");
 const adminRouter = require("./routes/admin/admin");
 const card = require('./routes/card')
+const shopCardRouter = require('./routes/shopCard')
 
 
 app.use(userMiddleware)
@@ -60,6 +61,7 @@ app.use("/vacansy", vacansyRouter);
 app.use("/favorites", favorites);
 app.use("/api", authAdminRouter);
 app.use('/card' , card)
+app.use('/shopping', shopCardRouter)
 app.use("/admin", authMiddleware, adminRouter);
 
 try {
