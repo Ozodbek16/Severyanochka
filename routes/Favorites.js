@@ -2,12 +2,19 @@ const express = require("express");
 const router = express.Router();
 const Favorites = require('../model/Favorites')
 const Mongo = require('../model/Mongo')
+const Shopping = require('../model/Shopping')
 
 router.get("/", async (req, res) => {
+  const pro = await Shopping.find()
+    let sum = 0
+    pro.forEach(item => {
+        sum = sum + item.count
+    })
   const product = await Favorites.find()
   res.render("favorites", {
     title: "Favorites page",
-    product
+    product,
+    sum
   });
 });
 

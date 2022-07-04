@@ -119,6 +119,10 @@
   margin-right: 8px;
 }
 
+.cards_card_img img{
+  width: 80px;
+}
+
 .cards_card_img span {
   position: absolute;
   top: -12px;
@@ -194,6 +198,13 @@
 
 .cards_card_count_p span:last-child {
   margin-left: 8px;
+}
+
+.cards_card_count_span{
+  display: block;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 .cards_card_price {

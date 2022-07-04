@@ -128,7 +128,9 @@
                         <input type="hidden" id="stars" value="{{star}}">
                     </div>
                     <div class="card_btn_buy">
-                        <button>В корзину</button>
+                        <form action="/shopping/{{id}}" method="post">
+                        <button type="submit">В корзину</button>
+                        </form>
                     </div>
                 </div>
             </div>
