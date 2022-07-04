@@ -3,9 +3,11 @@ const router = express.Router();
 const Favorites = require('../model/Favorites')
 const Mongo = require('../model/Mongo')
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
+  const product = await Favorites.find()
   res.render("favorites", {
     title: "Favorites page",
+    product
   });
 });
 
