@@ -1,5 +1,4 @@
 const Admin = require('../model/Admin')
-
 module.exports = async (req, res, next) => {
     if (!req.session.admin) {
         return next()

@@ -13,17 +13,17 @@
       <span><i class="fa-solid fa-xmark"></i></span>
     </button>
     <h3>Вход</h3>
-    <form action="/login">
+    <form action="/login" method="post">
       <div class="input-number">
         <label for="phone" class="phone_label">Телефон</label>
-        <input type="text" />
+        <input type="text" name="phone"/>
       </div>
       <div class="input-password">
         <label for="phone" class="phone_label">Парол</label>
-        <input type="text" />
+        <input type="text" name="password"/>
       </div>
 
-      <button class="log_in">Вход</button>
+      <button type="submit" class="log_in">Вход</button>
     </form>
     <div class="bottom_meniki">
       <div class="left">
