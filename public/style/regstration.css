@@ -1,0 +1,299 @@
+.regstration {
+  width: 687px;
+  height: auto;
+  margin: auto;
+  background-color: #fff;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  transition: all 0.6s ease;
+}
+.regstration:hover {
+  box-shadow: 0 0 10px #414141;
+}
+.regstration .regstration_icon {
+  display: flex;
+  justify-content: end;
+}
+.regstration .regstration_icon button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  width: 40px;
+  height: 40px;
+  background: #f3f2f1;
+  border-radius: 4px;
+  color: #414141;
+}
+.regstration .regstration_title {
+  text-align: center;
+}
+.regstration .regstration_title .regstration_title_top h1 {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  text-align: center;
+  color: #414141;
+  margin-top: 32px;
+}
+.regstration .regstration_title .regstration_title_bottom h1 {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  text-align: center;
+  color: #414141;
+  margin-top: 40px;
+  margin-bottom: 24px;
+}
+
+.regstration .regstration_put_box {
+  width: 553px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.regstration .regstration_put_box .put_box {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.regstration .gender label,
+.regstration .put_box1 label,
+.regstration .regstration_put_box .put_box label {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #8f8f8f;
+}
+.regstration .regstration_put_box .put_box input::placeholder {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #414141;
+}
+.regstration .regstration_put_box .put_box input {
+  padding: 8px 16px;
+  gap: 2px;
+  width: 260px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #70c05b;
+  box-shadow: 4px 8px 16px rgba(112, 192, 91, 0.2);
+  border-radius: 4px;
+}
+.regstration .regstration_put_box .put_box select {
+  padding: 8px 16px;
+  gap: 2px;
+  width: 260px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #70c05b;
+  box-shadow: 4px 8px 16px rgba(112, 192, 91, 0.2);
+  border-radius: 4px;
+}
+
+.data_put {
+  position: absolute;
+  right: 7px;
+  color: #414141;
+  top: 32px;
+}
+.regstration .gender .gender_box {
+  width: 260px;
+  height: 40px;
+  background: #f3f2f1;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.regstration .gender .gender_box .gender_m {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 8px;
+  width: 126px;
+  height: 32px;
+  background: #70c05b;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.genders {
+  display: none;
+}
+.bottom_button {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 56px;
+  padding-bottom: 44px;
+}
+.bottom_button button {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  gap: 8px;
+  width: 260px;
+  height: 68px;
+  background: #fcd5ba;
+  border-radius: 4px;
+  border: none;
+  color: #ff6633;
+}
+
+/* =================================================== adminPanel =================================== */
+.client {
+  margin-bottom: 76px;
+}
+.snd {
+  display: flex;
+  margin-top: 60px;
+  align-items: center;
+  justify-content: space-between;
+}
+.blender {
+  color: #414141;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
+}
+.admin-title {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 150%;
+  color: #414141;
+  margin-bottom: 32px;
+}
+.admin-title-nd {
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 150%;
+  color: #414141;
+  display: flex;
+}
+.clock {
+  margin-right: 17.5px;
+  margin-top: 5px;
+}
+.btns {
+  width: 515px;
+}
+.data {
+  border: none;
+  padding: 14px;
+  border-radius: 4px;
+}
+.day {
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 4px;
+  color: #606060;
+  padding: 16px;
+  width: 180px !important;
+  height: 60px;
+  margin-left: 20px;
+}
+.application {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+  height: 60px;
+  color: #606060;
+  width: 139px;
+  margin-right: 18px;
+}
+.notification {
+  margin-left: 8px;
+  background: #ff6633;
+  color: #fff;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+#btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: 400;
+  font-size: 16px;
+  color: #f2f2f2;
+  background: #008c49;
+  width: 200px;
+  height: 40px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+#btnView {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #f3f2f1;
+  border-radius: 4px;
+  color: #606060;
+}
+
+.client {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+#comment {
+  padding: 8px;
+  gap: 8px;
+  width: 40px;
+  height: 40px;
+  background: #f3f2f1;
+  border-radius: 4px;
+  margin-left: 20px;
+}
+#number {
+  text-decoration: underline !important;
+}
+#number img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+#num {
+  font-weight: 900;
+  font-size: 24px;
+  color: #232323;
+  margin-right: 26px;
+}
+#account {
+  display: flex;
+  align-items: center;
+}
+#account img {
+  margin-right: 20px;
+}
+#account p {
+  font-weight: 400;
+  font-size: 16px;
+  color: #232323;
+}
+
+.map {
+  margin-bottom: 68px;
+}
