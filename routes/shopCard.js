@@ -61,7 +61,6 @@ router.post('/:id', async (req, res) => {
     
     shop[0].count = shop[0].count + 1
     shop[0].AllPrice = shop[0].count * shop[0].price
-    console.log(shop[0]);
     
     await Shopping.findByIdAndUpdate(shop[0]._id, shop[0])
   }
@@ -70,20 +69,27 @@ router.post('/:id', async (req, res) => {
 
 router.post('/card/plus/:id',async (req, res) => {
   const prd = await Shopping.findById(req.params.id)
-  console.log(prd);
+  let sum = prd.count + 1
   const cr = {
-    count: prd.count + 1
+    count: sum,
+    AllPrice: sum * prd.price
   }
-  const pro = await Shopping.findByIdAndUpdate(req.params.id,cr)
+  await Shopping.findByIdAndUpdate(req.params.id,cr)
   res.redirect('/shopping')
 })
 
 router.post('/card/minus/:id',async (req, res) => {
   const prd = await Shopping.findById(req.params.id)
+  let sum = prd.count - 1
   const cr = {
-    count: prd.count - 1
+    count: sum,
+    AllPrice: sum * prd.price
   }
-  const pro = await Shopping.findByIdAndUpdate(req.params.id,cr)
+  if(cr.count === -1){
+    cr.count = 0
+    cr.AllPrice = 0
+  }
+  await Shopping.findByIdAndUpdate(req.params.id,cr)
   res.redirect('/shopping')
 })
 

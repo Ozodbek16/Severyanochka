@@ -13,7 +13,6 @@ router.get("/", async (req, res) => {
         sum = sum + item.count
     })
     const products = await Mongo.find()
-    console.log(res.locals.user);
     res.render('home', {
         title: 'Home page',
         products,
