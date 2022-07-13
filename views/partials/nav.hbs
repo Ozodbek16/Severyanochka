@@ -174,7 +174,7 @@
       </div>
 
       <div class="accaunt">
-        {{!-- {{#if admin}}
+        {{#if admin}}
           <button class="btn_user row align-items-center">
             <img src="{{admin.img}}" alt="" class="btn_user_first_img" />
             <p class="btn_user_name">{{admin.username}}</p>
@@ -200,6 +200,8 @@
               <li class="dropdown_item"><a href="#">asd</a></li>
             </ul>
           </button>
+        {{else if user}}
+        
         {{else}}
           <button class="btn_sign_in"><span>Войти</span>
             <svg
@@ -229,10 +231,10 @@
               ></path>
             </svg>
           </button>
-        {{/if}} --}}
+        {{/if}}
         {{#if user}}
           <button class="btn_user row align-items-center">
-            <img src="{{user.img}}" alt="" class="btn_user_first_img" />
+            <img src="/images/{{user.img}}" alt="" class="btn_user_first_img" />
             <p class="btn_user_name">{{user.name}}</p>
             <img src="/images/nav-images/Button.svg" alt="" />
             <div class="nav_icon_meniki">
@@ -256,8 +258,9 @@
               <li class="dropdown_item"><a href="#">asd</a></li>
             </ul>
           </button>
-        {{else}}
-        {{!-- <button class="btn_sign_in"><span>Войти</span>
+
+          {{!-- {{else}}
+        <button class="btn_sign_in"><span>Войти</span>
             <svg
               width="24"
               height="24"
