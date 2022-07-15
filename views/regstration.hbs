@@ -11,27 +11,15 @@
       <h1>Обязательные поля</h1>
     </div>
   </div>
-  <form action="/regstration" method="post">
+  <form action="/regstration" method="post" enctype="multipart/form-data">
     <div class="regstration_put_box">
       <div class="put_box">
         <label for="nomer">Телефон</label>
-        <input
-          type="tel"
-          id="nomer"
-          name="phone"
-          placeholder="+7 912"
-          required
-        />
+        <input type="tel" id="nomer" name="phone" placeholder="+7 912" required />
       </div>
       <div class="put_box">
         <label for="date">Телефон</label>
-        <input
-          type="date"
-          id="date"
-          name="date"
-          placeholder="01.01.1980"
-          required
-        />
+        <input type="date" id="date" name="date" placeholder="01.01.1980" required />
         {{!-- <div class="data_put">
           <i class="far fa-calendar"></i>
         </div> --}}
@@ -82,30 +70,14 @@
       <div class="gender">
         <label for="pol">Пол</label>
         <div class="gender_box">
-          <input
-            type="radio"
-            class="genders"
-            id="man"
-            name="gender"
-            value="man"
-          />
-          <input
-            type="radio"
-            class="genders"
-            id="woman"
-            name="gender"
-            value="woman"
-          />
-          <label for="man"><div
-              class="gender_m"
-              required
-              id="gender_m"
-            >Мужской</div></label>
-          <label for="woman"><div
-              class="gender_m"
-              required
-              id="gender_g"
-            >Женский</div></label>
+          <input type="radio" class="genders" id="man" name="gender" value="man" />
+          <input type="radio" class="genders" id="woman" name="gender" value="woman" />
+          <label for="man">
+            <div class="gender_m" required id="gender_m">Мужской</div>
+          </label>
+          <label for="woman">
+            <div class="gender_m" required id="gender_g">Женский</div>
+          </label>
         </div>
       </div>
     </div>
@@ -144,8 +116,8 @@
         <input id="checkbox" type="checkbox" />
         <label for="checkbox">У меня нет карты лояльности</label>
       </div>
-
     </div>
+    <input type="file" name="img" id="avatar">
     <div class="bottom_button">
       <button type="submit">Продолжить</button>
     </div>

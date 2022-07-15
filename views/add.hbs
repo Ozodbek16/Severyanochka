@@ -8,19 +8,9 @@
         <input type="text" name="brand" placeholder="brand">
         <input type="text" name="country" placeholder="Country">
         <select name="catalog" id="catalog">
-            <option value="Молоко, сыр, яйцо">Молоко, сыр, яйцо</option>
-            <option value="Хлеб">Хлеб</option>
-            <option value="Фрукты и овощи">Фрукты и овощи</option>
-            <option value="Замороженные продукты">Замороженные продукты</option>
-            <option value="Напитки">Напитки</option>
-            <option value="Кондитерские изделия">Кондитерские изделия</option>
-            <option value="Чай, кофе">Чай, кофе</option>
-            <option value="Бакалея">Бакалея</option>
-            <option value="Здоровое питание">Здоровое питание</option>
-            <option value="Зоотовары">Зоотовары</option>
-            <option value="Детское питание">Детское питание</option>
-            <option value="Мясо, птица, колбаса">Мясо, птица, колбаса</option>
-            <option value="Непродовольственные товары">Непродовольственные товары</option>
+            {{#each categories}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
         </select>
         <input type="number" name="weight" placeholder="weight in gramm">
         <input type="submit">

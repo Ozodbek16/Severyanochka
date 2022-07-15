@@ -9,7 +9,7 @@ router.get("/login", (req, res) => {
   res.render("admin/login", {
     title: "Login page",
     layout: "../admin/layouts/main",
-    admin: res.locals.admin
+    admin: res.locals.admin,
   });
 });
 
@@ -74,7 +74,7 @@ router.post("/register", upload.single("img"), async (req, res) => {
     username,
     surname,
     password,
-    img: '/img/avatar/'+req.file.filename,
+    img: "/img/avatar/" + req.file.filename,
   });
   await admin.save();
   res.redirect("/api/login");

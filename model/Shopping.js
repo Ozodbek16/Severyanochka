@@ -1,41 +1,21 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model } = require("mongoose");
 const ShoppingScheme = new Schema({
-    name: {
-        type: String,
-        required: true
-    }, price: {
+  userid: {
+    type: Schema.Types.ObjectId,
+    ref: "user",
+  },
+  card: [
+    {
+      product: {
+        type: Schema.Types.ObjectId,
+        ref: "products",
+        required: true,
+      },
+      count: {
         type: Number,
-        required: true
-    }, discount: {
-        type: String,
-        required: true
-    }, star: {
-        type: Number,
-        required: true
-    }, brand: {
-        type: String,
-    }, country: {
-        type: String,
-        required: true
-    }, catalog: {
-        type: String,
-        required: true
-    }, weight: {
-        type: Number,
-        required: true
+        required: true,
+      },
     },
-    img: {
-        type: String,
-        default: '/img/default-image.jpg'
-    },
-    count: {
-        type: Number,
-        required: true
-    },
-    AllPrice: {
-        type: Number,
-        required: true
-    }
-
-})
-module.exports = model('shopping', ShoppingScheme)
+  ],
+});
+module.exports = model("shoppings", ShoppingScheme);
