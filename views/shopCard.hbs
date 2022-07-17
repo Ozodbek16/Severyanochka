@@ -2,7 +2,11 @@
 <div class="container">
   <div class="ordered_title_directions">
     <a class="ordered_title_directions_main" href="/">Главная</a>
-    <img class="ordered_title_directions_svg" src="/svg/r-arrow.svg" alt="svg" />
+    <img
+      class="ordered_title_directions_svg"
+      src="/svg/r-arrow.svg"
+      alt="svg"
+    />
     <a class="ordered_title_directions_next" href="/shopping">Корзина</a>
   </div>
   <h1 class="title_page">Корзина<span>{{sum}}</span></h1>
@@ -14,70 +18,115 @@
   <div class="order_cards">
     <div class="order_cards_left">
       {{#each cart.card}}
-      <div class="order_cards_card row justify-content-between">
-        <div class="cards_card_left_left row">
-          <div class="cards_card_img">
-            <img src="{{product.img}}" alt="png" />
-            <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M13.5692 4.43096C13.6994 4.56113 13.6994 4.77219 13.5692 4.90236L6.23587 12.2357C6.10569 12.3659 5.89464 12.3659 5.76446 12.2357L2.43113 8.90236C2.30095 8.77219 2.30095 8.56113 2.43113 8.43096C2.5613 8.30078 2.77236 8.30078 2.90253 8.43096L6.00016 11.5286L13.0978 4.43096C13.228 4.30078 13.439 4.30078 13.5692 4.43096Z"
-                  fill="white"></path>
-              </svg>
-            </span>
-          </div>
-          <div class="cards_card_info">
-            <h3 class="cards_card_info_h3">{{product.name}}</h3>
-            <p class="cards_card_info_p"><span>{{product.price}} ₽</span> за шт.</p>
-          </div>
-        </div>
-        <div class="cards_card_right_right row">
-          <div class="cards_card_count">
-            <div class="cards_card_count_p row align-items-center justify-content-between">
-              <span>
-                <form action="/shopping/card/minus/{{product._id}}" method="post">
-                  <button type="submit" class="cards_card_count_span">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M4.5 12C4.5 11.7239 4.72386 11.5 5 11.5H19C19.2761 11.5 19.5 11.7239 19.5 12C19.5 12.2761 19.2761 12.5 19 12.5H5C4.72386 12.5 4.5 12.2761 4.5 12Z"
-                        fill="white"></path>
-                    </svg>
-                  </button>
-                </form>
-
-              </span>
-              {{count}}
-              <span>
-
-                <form action="/shopping/card/plus/{{product._id}}" method="post">
-                  <button type="submit" class="cards_card_count_span">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M12 4.5C12.2761 4.5 12.5 4.72386 12.5 5V19C12.5 19.2761 12.2761 19.5 12 19.5C11.7239 19.5 11.5 19.2761 11.5 19V5C11.5 4.72386 11.7239 4.5 12 4.5Z"
-                        fill="white"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M4.5 12C4.5 11.7239 4.72386 11.5 5 11.5H19C19.2761 11.5 19.5 11.7239 19.5 12C19.5 12.2761 19.2761 12.5 19 12.5H5C4.72386 12.5 4.5 12.2761 4.5 12Z"
-                        fill="white"></path>
-                    </svg>
-                  </button>
-                </form>
-
+        <div class="order_cards_card row justify-content-between">
+          <div class="cards_card_left_left row">
+            <div class="cards_card_img">
+              <img src="{{product.img}}" alt="png" />
+              <span><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M13.5692 4.43096C13.6994 4.56113 13.6994 4.77219 13.5692 4.90236L6.23587 12.2357C6.10569 12.3659 5.89464 12.3659 5.76446 12.2357L2.43113 8.90236C2.30095 8.77219 2.30095 8.56113 2.43113 8.43096C2.5613 8.30078 2.77236 8.30078 2.90253 8.43096L6.00016 11.5286L13.0978 4.43096C13.228 4.30078 13.439 4.30078 13.5692 4.43096Z"
+                    fill="white"
+                  ></path>
+                </svg>
               </span>
             </div>
+            <div class="cards_card_info">
+              <h3 class="cards_card_info_h3">{{product.name}}</h3>
+              <p class="cards_card_info_p"><span>{{product.price}} ₽</span>
+                за шт.</p>
+            </div>
           </div>
-          <div class="cards_card_price">
-            <p class="cards_card_price_p"><span>0</span> ₽</p>
+          <div class="cards_card_right_right row">
+            <div class="cards_card_count">
+              <div
+                class="cards_card_count_p row align-items-center justify-content-between"
+              >
+                <span>
+                  <form
+                    action="/shopping/card/minus/{{product._id}}"
+                    method="post"
+                  >
+                    <button type="submit" class="cards_card_count_span">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M4.5 12C4.5 11.7239 4.72386 11.5 5 11.5H19C19.2761 11.5 19.5 11.7239 19.5 12C19.5 12.2761 19.2761 12.5 19 12.5H5C4.72386 12.5 4.5 12.2761 4.5 12Z"
+                          fill="white"
+                        ></path>
+                      </svg>
+                    </button>
+                  </form>
+
+                </span>
+                {{count}}
+                <span>
+
+                  <form action="/shopping/upload/{{_id}}/1" method="post">
+                    <button type="submit" class="cards_card_count_span">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M12 4.5C12.2761 4.5 12.5 4.72386 12.5 5V19C12.5 19.2761 12.2761 19.5 12 19.5C11.7239 19.5 11.5 19.2761 11.5 19V5C11.5 4.72386 11.7239 4.5 12 4.5Z"
+                          fill="white"
+                        ></path>
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M4.5 12C4.5 11.7239 4.72386 11.5 5 11.5H19C19.2761 11.5 19.5 11.7239 19.5 12C19.5 12.2761 19.2761 12.5 19 12.5H5C4.72386 12.5 4.5 12.2761 4.5 12Z"
+                          fill="white"
+                        ></path>
+                      </svg>
+                    </button>
+                  </form>
+
+                </span>
+              </div>
+            </div>
+            <div class="cards_card_price">
+              <p class="cards_card_price_p"><span>0</span> ₽</p>
+            </div>
           </div>
         </div>
-      </div>
       {{/each}}
       <div class="order_cards_card row justify-content-between">
         <div class="cards_card_left_left row">
           <div class="cards_card_img">
             <img src="/img/cards_card.png" alt="png" />
-            <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
+            <span><svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
                   d="M13.5692 4.43096C13.6994 4.56113 13.6994 4.77219 13.5692 4.90236L6.23587 12.2357C6.10569 12.3659 5.89464 12.3659 5.76446 12.2357L2.43113 8.90236C2.30095 8.77219 2.30095 8.56113 2.43113 8.43096C2.5613 8.30078 2.77236 8.30078 2.90253 8.43096L6.00016 11.5286L13.0978 4.43096C13.228 4.30078 13.439 4.30078 13.5692 4.43096Z"
-                  fill="white"></path>
+                  fill="white"
+                ></path>
               </svg>
             </span>
           </div>
@@ -88,23 +137,46 @@
         </div>
         <div class="cards_card_right_right row">
           <div class="cards_card_count">
-            <p class="cards_card_count_p row align-items-center justify-content-between"><span>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
+            <p
+              class="cards_card_count_p row align-items-center justify-content-between"
+            ><span>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
                     d="M4.5 12C4.5 11.7239 4.72386 11.5 5 11.5H19C19.2761 11.5 19.5 11.7239 19.5 12C19.5 12.2761 19.2761 12.5 19 12.5H5C4.72386 12.5 4.5 12.2761 4.5 12Z"
-                    fill="white"></path>
+                    fill="white"
+                  ></path>
                 </svg>
 
               </span>
               2
               <span>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
                     d="M12 4.5C12.2761 4.5 12.5 4.72386 12.5 5V19C12.5 19.2761 12.2761 19.5 12 19.5C11.7239 19.5 11.5 19.2761 11.5 19V5C11.5 4.72386 11.7239 4.5 12 4.5Z"
-                    fill="white"></path>
-                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    fill="white"
+                  ></path>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
                     d="M4.5 12C4.5 11.7239 4.72386 11.5 5 11.5H19C19.2761 11.5 19.5 11.7239 19.5 12C19.5 12.2761 19.2761 12.5 19 12.5H5C4.72386 12.5 4.5 12.2761 4.5 12Z"
-                    fill="white"></path>
+                    fill="white"
+                  ></path>
                 </svg>
 
               </span>

@@ -4,6 +4,10 @@ const ShoppingScheme = new Schema({
     type: Schema.Types.ObjectId,
     ref: "user",
   },
+  totalCount: {
+    type: Number,
+    default: 0,
+  },
   card: [
     {
       product: {

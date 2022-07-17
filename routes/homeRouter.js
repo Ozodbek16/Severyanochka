@@ -4,20 +4,38 @@ const Mongo = require("../model/Mongo");
 const Shopping = require("../model/Shopping");
 const User = require("../model/User");
 const bcrypt = require("bcrypt");
+const Cart = require("../model/Shopping");
+const user = require("../middleware/user");
 
 router.get("/", async (req, res) => {
-  const pro = await Shopping.find();
-  let sum = 0;
-  pro.forEach((item) => {
-    sum = sum + item.count;
-  });
   const products = await Mongo.find();
-  res.render("home", {
-    title: "Home page",
-    products,
-    sum,
-    user: res.locals.user
-  });
+  try {
+    const user = res.locals.user;
+    const cart = await Cart.findOne({ userid: user._id });
+
+    if (!cart) {
+      res.render("home", {
+        title: "Home page",
+        products,
+        sum: 0,
+      });
+      return;
+    }
+
+    let sum = cart.totalCount;
+
+    res.render("home", {
+      title: "Home page",
+      products,
+      sum,
+    });
+  } catch (error) {
+    res.render("home", {
+      title: "Home page",
+      products,
+      sum: 0,
+    });
+  }
 });
 
 router.post("/login", async (req, res) => {

@@ -1,31 +1,47 @@
 const express = require("express");
+const { localsAsTemplateData } = require("hbs");
 const router = express.Router();
 const Cart = require("../model/Shopping");
 
 router.get("/", async (req, res) => {
-  const user = res.locals.user;
-  const cart = await Cart.findOne({ userid: user._id }).populate([
-    "userid",
-    "card.product",
-  ]);
+  let cart = {
+    card: [],
+    totalCount: 0,
+  };
+  try {
+    const user = res.locals.user;
+    const newCart = await Cart.findOne({ userid: user._id }).populate([
+      "userid",
+      "card.product",
+    ]);
 
-  console.log(JSON.stringify(cart));
+    newCart ? (cart = newCart) : null;
 
-  res.render("shopCard", {
-    title: "Korzina",
-    cart,
-  });
+    let sum = cart.totalCount;
+
+    res.render("shopCard", {
+      title: "Korzina",
+      cart,
+      sum,
+    });
+  } catch (error) {
+    res.render("shopCard", {
+      title: "Korzina",
+      cart,
+      sum: 0,
+    });
+  }
 });
 
-router.post("/add", async (req, res) => {
-  const { productId, count, color } = req.body;
-  const userid = req.cookies.userid;
+router.post("/add/:id", async (req, res) => {
+  const productid = req.params.id;
+  const userid = res.locals.user._id;
   const cart = await Cart.findOne({ userid });
 
   if (!cart) {
     const newCart = new Cart({
       userid,
-      products: [{ product: productId, count, color }],
+      card: [{ product: productid, count: 1 }],
       totalCount: 1,
     });
 
@@ -33,58 +49,49 @@ router.post("/add", async (req, res) => {
       await newCart.save();
     } catch (error) {
       console.log(error);
-      res.redirect("/products");
       return;
     }
-    res.redirect("/cart");
+    res.redirect("/shopping");
     return;
   }
 
   try {
-    const totalCount = await Cart.findOne({ userid });
-    const updatedCart = await Cart.findOneAndUpdate(
+    await Cart.findOneAndUpdate(
       { userid },
       {
-        $push: { products: { product: productId, count, color } },
-        $set: { totalCount: totalCount.products.length + 1 },
+        $push: { card: { product: productid, count: 1 } },
+        $set: { totalCount: cart.card.length + 1 },
       }
     );
-
-    res.redirect("/cart");
+    console.log("product added to shopping cart: " + userid);
   } catch (error) {
     console.log(error);
-    res.redirect("/products");
   }
+  res.redirect("/shopping");
 });
 
-router.post("/upload", async (req, res) => {
-  const updateData = req.body;
-  const userid = req.cookies.userid;
-  const cart = await Cart.findOne({ userid });
+router.post("/upload/:id/:count", async (req, res) => {
+  const userid = res.locals.user._id;
+  const count = +req.params.count;
+  const id = req.params.id;
+  const cart = JSON.parse(JSON.stringify(await Cart.findOne({ userid })));
+  console.log(cart);
 
-  if (!cart || (!updateData.color && !updateData.count) || !updateData.id) {
-    res.redirect("/products");
+  if (!cart || !count || !id || !userid) {
+    res.redirect("/shopping");
     return;
   }
 
   try {
-    if (updateData.color) {
-      await Cart.findOneAndUpdate(
-        { userid, "products._id": updateData.id },
-        { $set: { [`products.$.color`]: updateData.color } }
-      );
-    }
-    if (updateData.count) {
-      await Cart.findOneAndUpdate(
-        { userid, "products._id": updateData.id },
-        { $set: { [`products.$.count`]: updateData.count } }
-      );
-    }
-    res.json({ ok: true, message: "Updated cart data" });
+    const updatedData = await Cart.findOneAndUpdate(
+      { userid, "card._id": id },
+      { $set: { [`card.$.count`]: count } }
+    );
+    console.log("Product data successfuly updated");
   } catch (error) {
     console.log(error);
-    res.json({ ok: false, message: "Not updated cart data" });
   }
+  res.redirect("/shopping");
 });
 
 router.post("/remove", async (req, res) => {

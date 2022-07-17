@@ -7,7 +7,7 @@ const Categories = require("../model/Category");
 
 router.get("/add", async (req, res) => {
   const categories = await Categories.find();
-
+  
   res.render("add", {
     title: "add",
     categories,

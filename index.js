@@ -35,10 +35,12 @@ app.use(
   })
 );
 
+// importing middlewares
 const authMiddleware = require("./middleware/auth");
 const userMiddleware = require("./middleware/user");
 const userDataMiddleware = require("./middleware/userData");
 
+// importing routes
 const homeR = require("./routes/homeRouter");
 const catalogR = require("./routes/catalogRouter");
 const orderRouter = require("./routes/order");
@@ -52,6 +54,7 @@ const card = require("./routes/card");
 const shopCardRouter = require("./routes/shopCard");
 const regstration = require("./routes/regstration");
 
+// routing
 app.use(userMiddleware);
 app.use(userDataMiddleware);
 app.use("/", homeR);

@@ -7,9 +7,9 @@ const Shopping = require('../model/Shopping')
 router.get("/", async (req, res) => {
   const pro = await Shopping.find()
     let sum = 0
-    pro.forEach(item => {
-        sum = sum + item.count
-    })
+    for (let i = 0; i < pro.length; i++) {
+      sum += pro[i].card[i].count    
+    }
   const product = await Favorites.find()
   res.render("favorites", {
     title: "Favorites page",
