@@ -1,66 +1,47 @@
 const express = require("express");
-const { localsAsTemplateData } = require("hbs");
 const router = express.Router();
 const Cart = require("../model/Shopping");
+const Users = require('../model/User');
+const Products = require('../model/Mongo')
 
 router.get("/", async (req, res) => {
-  let cart = {
-    card: [],
-    totalCount: 0,
-  };
-  try {
-    const user = res.locals.user;
-    const newCart = await Cart.findOne({ userid: user._id }).populate([
-      "userid",
-      "card.product",
-    ]);
-
-    newCart ? (cart = newCart) : null;
-
-    let sum = cart.totalCount;
-
-    res.render("shopCard", {
-      title: "Korzina",
-      cart,
-      sum,
-    });
-  } catch (error) {
-    res.render("shopCard", {
-      title: "Korzina",
-      cart,
-      sum: 0,
-    });
-  }
+  res.render("shopCard", {
+    title: "Korzina",
+  });
 });
 
 router.post("/add/:id", async (req, res) => {
   const productid = req.params.id;
   const userid = res.locals.user._id;
-  const cart = await Cart.findOne({ userid });
+  const cart = res.locals.cart;
+  const product = await Products.findById(productid);
 
-  if (!cart) {
-    const newCart = new Cart({
-      userid,
-      card: [{ product: productid, count: 1 }],
-      totalCount: 1,
-    });
-
-    try {
-      await newCart.save();
-    } catch (error) {
-      console.log(error);
-      return;
-    }
-    res.redirect("/shopping");
-    return;
+  if (!product) {
+    res.redirect('/');
+    return
   }
 
+  const isProductYes = cart.items.find((item) => { item.product._id === productid })
+
   try {
-    await Cart.findOneAndUpdate(
-      { userid },
+    if (isProductYes) {
+      await Users.findByIdAndUpdate(userid,
+        {
+          $set: { 'cart.price': cart.price + product.price },
+        }
+      );
+      await Users.findOneAndUpdate(
+        { userid, 'cart.items.product': productid },
+        {
+          $set: { 'cart.items.product': cart.price + product.price },
+        }
+      );
+    }
+
+    await Users.findByIdAndUpdate(userid,
       {
-        $push: { card: { product: productid, count: 1 } },
-        $set: { totalCount: cart.card.length + 1 },
+        $push: { 'cart.items': { product: productid } },
+        $set: { 'cart.price': cart.price + product.price },
       }
     );
     console.log("product added to shopping cart: " + userid);
@@ -74,8 +55,7 @@ router.post("/upload/:id/:count", async (req, res) => {
   const userid = res.locals.user._id;
   const count = +req.params.count;
   const id = req.params.id;
-  const cart = JSON.parse(JSON.stringify(await Cart.findOne({ userid })));
-  console.log(cart);
+  const product = await Products.findById(productid);
 
   if (!cart || !count || !id || !userid) {
     res.redirect("/shopping");

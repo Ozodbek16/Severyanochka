@@ -39,6 +39,7 @@ app.use(
 const authMiddleware = require("./middleware/auth");
 const userMiddleware = require("./middleware/user");
 const userDataMiddleware = require("./middleware/userData");
+const getCartMiddleware = require('./middleware/getCart');
 
 // importing routes
 const homeR = require("./routes/homeRouter");
@@ -57,6 +58,7 @@ const regstration = require("./routes/regstration");
 // routing
 app.use(userMiddleware);
 app.use(userDataMiddleware);
+app.use(getCartMiddleware);
 app.use("/", homeR);
 app.use("/catalog", catalogR);
 app.use("/order", orderRouter);

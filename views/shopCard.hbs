@@ -17,7 +17,7 @@
 
   <div class="order_cards">
     <div class="order_cards_left">
-      {{#each cart.card}}
+      {{#each cart.items}}
         <div class="order_cards_card row justify-content-between">
           <div class="cards_card_left_left row">
             <div class="cards_card_img">
@@ -50,10 +50,7 @@
                 class="cards_card_count_p row align-items-center justify-content-between"
               >
                 <span>
-                  <form
-                    action="/shopping/card/minus/{{product._id}}"
-                    method="post"
-                  >
+                  <form action="/shopping/upload/{{_id}}/3" method="post">
                     <button type="submit" class="cards_card_count_span">
                       <svg
                         width="24"
@@ -76,7 +73,7 @@
                 {{count}}
                 <span>
 
-                  <form action="/shopping/upload/{{_id}}/1" method="post">
+                  <form action="/shopping/upload/{{_id}}/6" method="post">
                     <button type="submit" class="cards_card_count_span">
                       <svg
                         width="24"

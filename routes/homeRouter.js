@@ -9,33 +9,11 @@ const user = require("../middleware/user");
 
 router.get("/", async (req, res) => {
   const products = await Mongo.find();
-  try {
-    const user = res.locals.user;
-    const cart = await Cart.findOne({ userid: user._id });
 
-    if (!cart) {
-      res.render("home", {
-        title: "Home page",
-        products,
-        sum: 0,
-      });
-      return;
-    }
-
-    let sum = cart.totalCount;
-
-    res.render("home", {
-      title: "Home page",
-      products,
-      sum,
-    });
-  } catch (error) {
-    res.render("home", {
-      title: "Home page",
-      products,
-      sum: 0,
-    });
-  }
+  res.render("home", {
+    title: "Home page",
+    products,
+  });
 });
 
 router.post("/login", async (req, res) => {
