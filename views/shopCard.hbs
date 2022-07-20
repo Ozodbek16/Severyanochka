@@ -50,59 +50,65 @@
                 class="cards_card_count_p row align-items-center justify-content-between"
               >
                 <span>
-                  <form action="/shopping/upload/{{_id}}/3" method="post">
-                    <button type="submit" class="cards_card_count_span">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M4.5 12C4.5 11.7239 4.72386 11.5 5 11.5H19C19.2761 11.5 19.5 11.7239 19.5 12C19.5 12.2761 19.2761 12.5 19 12.5H5C4.72386 12.5 4.5 12.2761 4.5 12Z"
-                          fill="white"
-                        ></path>
-                      </svg>
-                    </button>
-                  </form>
-
-                </span>
-                {{count}}
-                <span>
-
-                  <form action="/shopping/upload/{{_id}}/6" method="post">
-                    <button type="submit" class="cards_card_count_span">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M12 4.5C12.2761 4.5 12.5 4.72386 12.5 5V19C12.5 19.2761 12.2761 19.5 12 19.5C11.7239 19.5 11.5 19.2761 11.5 19V5C11.5 4.72386 11.7239 4.5 12 4.5Z"
-                          fill="white"
-                        ></path>
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M4.5 12C4.5 11.7239 4.72386 11.5 5 11.5H19C19.2761 11.5 19.5 11.7239 19.5 12C19.5 12.2761 19.2761 12.5 19 12.5H5C4.72386 12.5 4.5 12.2761 4.5 12Z"
-                          fill="white"
-                        ></path>
-                      </svg>
-                    </button>
-                  </form>
-
+                  <button
+                    type="submit"
+                    data-count="{{count}}"
+                    data-productid="{{product._id}}"
+                    class="cards_card_count_span minus"
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4.5 12C4.5 11.7239 4.72386 11.5 5 11.5H19C19.2761 11.5 19.5 11.7239 19.5 12C19.5 12.2761 19.2761 12.5 19 12.5H5C4.72386 12.5 4.5 12.2761 4.5 12Z"
+                        fill="white"
+                      ></path>
+                    </svg>
+                  </button>
+                  <span class="product_count">
+                    {{count}}
+                  </span>
+                  <button
+                    type="submit"
+                    data-count="{{count}}"
+                    data-productid="{{product._id}}"
+                    class="cards_card_count_span plus"
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12 4.5C12.2761 4.5 12.5 4.72386 12.5 5V19C12.5 19.2761 12.2761 19.5 12 19.5C11.7239 19.5 11.5 19.2761 11.5 19V5C11.5 4.72386 11.7239 4.5 12 4.5Z"
+                        fill="white"
+                      ></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4.5 12C4.5 11.7239 4.72386 11.5 5 11.5H19C19.2761 11.5 19.5 11.7239 19.5 12C19.5 12.2761 19.2761 12.5 19 12.5H5C4.72386 12.5 4.5 12.2761 4.5 12Z"
+                        fill="white"
+                      ></path>
+                    </svg>
+                  </button>
                 </span>
               </div>
             </div>
             <div class="cards_card_price">
-              <p class="cards_card_price_p"><span>0</span> ₽</p>
+              <p class="cards_card_price_p"><span
+                  class="totalprice_product"
+                >0</span>
+                ₽</p>
             </div>
           </div>
         </div>
@@ -208,7 +214,7 @@
       <div class="order_cards_right_line"></div>
       <div class="order_cards_right_result">
         <p>Итог</p>
-        <h3>{{cart.price}} ₽</h3>
+        <h3 class="total_price">{{cart.price}} ₽</h3>
       </div>
       <div class="order_cards_right_bonuce">
         <div class="order_cards_right_bonuce_shape"></div>
@@ -225,3 +231,4 @@
 </div>
 
 <script src="/script/Favorites.js"></script>
+<script src="/script/ShopCard.js"></script>

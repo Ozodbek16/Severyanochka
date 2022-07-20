@@ -119,7 +119,7 @@
   margin-right: 8px;
 }
 
-.cards_card_img img{
+.cards_card_img img {
   width: 80px;
 }
 
@@ -189,18 +189,22 @@
 
 .cards_card_count_p span {
   height: 24px;
-  cursor: pointer;
+  width: 100%;
+  text-align: center;
 }
 
-.cards_card_count_p span:first-child {
-  margin-right: 8px;
+.cards_card_count_p span .product_count{
+  justify-content: center;
 }
 
-.cards_card_count_p span:last-child {
-  margin-left: 8px;
+.cards_card_count_p span {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.cards_card_count_span{
+.cards_card_count_span {
   display: block;
   border: none;
   background: transparent;

@@ -57,27 +57,85 @@ router.post("/add/:id", async (req, res) => {
   res.redirect("/shopping");
 });
 
-router.post("/upload/:id/:count", async (req, res) => {
+router.post("/upload/:productid/:mode", async (req, res) => {
   const userid = res.locals.user._id;
-  const count = +req.params.count;
-  const id = req.params.id;
-  const product = await Products.findById(productid);
+  const cart = res.locals.cart;
+  const productid = req.params.productid;
+  const mode = req.params.mode;
+  const product = cart.items.find((item) => item.product._id == productid);
 
-  if (!cart || !count || !id || !userid) {
+  if (!cart || !productid || !userid || !product) {
     res.redirect("/shopping");
     return;
   }
 
   try {
-    const updatedData = await Cart.findOneAndUpdate(
-      { userid, "card._id": id },
-      { $set: { [`card.$.count`]: count } }
-    );
-    console.log("Product data successfuly updated");
+    if (mode === "plus") {
+      await Users.findOneAndUpdate(
+        { _id: userid, "cart.items.product": productid },
+        {
+          $inc: {
+            "cart.items.$.count": 1,
+          },
+          $set: {
+            "cart.price": cart.price + product.product.price,
+          },
+        }
+      );
+      res.json({
+        message: "Product incremented to 1",
+        ok: true,
+        data: {
+          count: product.count + 1,
+          price: cart.price + product.product.price,
+        },
+      });
+      return;
+    }
+    if (mode === "minus") {
+      if (product.count == 1) {
+        await Users.findOneAndUpdate(
+          { _id: userid, "cart.items.product": productid },
+          {
+            $set: {
+              "cart.price": cart.price - product.product.price,
+            },
+            $pull: {
+              "cart.items": { product: productid },
+            },
+          }
+        );
+        res.json({
+          message: "Product is deleted because count is 1",
+          ok: true,
+        });
+        return;
+      }
+      const updatedData = await Users.findOneAndUpdate(
+        { _id: userid, "cart.items.product": productid },
+        {
+          $inc: {
+            "cart.items.$.count": -1,
+          },
+          $set: {
+            "cart.price": cart.price - product.product.price,
+          },
+        }
+      );
+      res.json({
+        message: "Product decrement to 1",
+        ok: true,
+        data: {
+          count: product.count - 1,
+          price: cart.price - product.product.price,
+        },
+      });
+      return;
+    }
   } catch (error) {
-    console.log(error);
+    res.json({ message: error, ok: false });
+    return;
   }
-  res.redirect("/shopping");
 });
 
 router.post("/remove", async (req, res) => {
