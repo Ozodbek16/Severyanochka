@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Cart = require("../model/Shopping");
-const Users = require('../model/User');
-const Products = require('../model/Mongo')
+const Users = require("../model/User");
+const Products = require("../model/Mongo");
 
 router.get("/", async (req, res) => {
   res.render("shopCard", {
@@ -12,38 +12,44 @@ router.get("/", async (req, res) => {
 
 router.post("/add/:id", async (req, res) => {
   const productid = req.params.id;
-  const userid = res.locals.user._id;
+  let userid;
+
+  try {
+    userid = res.locals.user._id;
+  } catch (error) {
+    res.redirect("/");
+    return;
+  }
+
   const cart = res.locals.cart;
   const product = await Products.findById(productid);
 
   if (!product) {
-    res.redirect('/');
-    return
+    res.redirect("/");
+    return;
   }
-
-  const isProductYes = cart.items.find((item) => { item.product._id === productid })
-
+  console.log(cart.items);
+  const isProductYes = cart.items.find((item) => item.product._id == productid);
+  console.log(isProductYes);
   try {
     if (isProductYes) {
-      await Users.findByIdAndUpdate(userid,
-        {
-          $set: { 'cart.price': cart.price + product.price },
-        }
-      );
       await Users.findOneAndUpdate(
-        { userid, 'cart.items.product': productid },
+        { _id: userid, "cart.items.product": productid },
         {
-          $set: { 'cart.items.product': cart.price + product.price },
+          $set: {
+            "cart.price": cart.price + product.price,
+            "cart.items.$.count": isProductYes.count + 1,
+          },
         }
       );
+      res.redirect("/shopping");
+      return;
     }
 
-    await Users.findByIdAndUpdate(userid,
-      {
-        $push: { 'cart.items': { product: productid } },
-        $set: { 'cart.price': cart.price + product.price },
-      }
-    );
+    await Users.findByIdAndUpdate(userid, {
+      $push: { "cart.items": { product: productid } },
+      $set: { "cart.price": cart.price + product.price },
+    });
     console.log("product added to shopping cart: " + userid);
   } catch (error) {
     console.log(error);

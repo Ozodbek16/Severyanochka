@@ -18,6 +18,5 @@ module.exports = async (req, res, next) => {
 
     res.locals.cart = cart
     res.locals.sum = cart.items.length
-    console.log(cart);
     next();
 }
