@@ -54,6 +54,17 @@ const userSchema = new Schema({
       type: Number,
       default: 0
     },
+  },
+  favorites: {
+    items: [
+      {
+        product: {
+          type: Schema.Types.ObjectId,
+          ref: 'products',
+          required: true
+        }
+      }
+    ]
   }
 });
 

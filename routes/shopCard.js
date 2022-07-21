@@ -28,17 +28,15 @@ router.post("/add/:id", async (req, res) => {
     res.redirect("/");
     return;
   }
-  console.log(cart.items);
   const isProductYes = cart.items.find((item) => item.product._id == productid);
-  console.log(isProductYes);
   try {
     if (isProductYes) {
       await Users.findOneAndUpdate(
         { _id: userid, "cart.items.product": productid },
         {
-          $set: {
-            "cart.price": cart.price + product.price,
-            "cart.items.$.count": isProductYes.count + 1,
+          $inc: {
+            "cart.price": product.price,
+            "cart.items.$.count": 1,
           },
         }
       );
@@ -48,7 +46,9 @@ router.post("/add/:id", async (req, res) => {
 
     await Users.findByIdAndUpdate(userid, {
       $push: { "cart.items": { product: productid } },
-      $set: { "cart.price": cart.price + product.price },
+      $inc: {
+        "cart.price": product.price,
+      },
     });
     console.log("product added to shopping cart: " + userid);
   } catch (error) {
@@ -71,14 +71,12 @@ router.post("/upload/:productid/:mode", async (req, res) => {
 
   try {
     if (mode === "plus") {
-      await Users.findOneAndUpdate(
+      const updatedData = await Users.findOneAndUpdate(
         { _id: userid, "cart.items.product": productid },
         {
           $inc: {
             "cart.items.$.count": 1,
-          },
-          $set: {
-            "cart.price": cart.price + product.product.price,
+            "cart.price": product.product.price,
           },
         }
       );
@@ -87,18 +85,18 @@ router.post("/upload/:productid/:mode", async (req, res) => {
         ok: true,
         data: {
           count: product.count + 1,
-          price: cart.price + product.product.price,
+          price: updatedData.cart.price + product.product.price,
         },
       });
       return;
     }
     if (mode === "minus") {
       if (product.count == 1) {
-        await Users.findOneAndUpdate(
+        const updatedData = await Users.findOneAndUpdate(
           { _id: userid, "cart.items.product": productid },
           {
-            $set: {
-              "cart.price": cart.price - product.product.price,
+            $inc: {
+              "cart.price": -product.product.price,
             },
             $pull: {
               "cart.items": { product: productid },
@@ -107,6 +105,10 @@ router.post("/upload/:productid/:mode", async (req, res) => {
         );
         res.json({
           message: "Product is deleted because count is 1",
+          isDeleted: true,
+          data: {
+            price: updatedData.cart.price - product.product.price,
+          },
           ok: true,
         });
         return;
@@ -127,7 +129,7 @@ router.post("/upload/:productid/:mode", async (req, res) => {
         ok: true,
         data: {
           count: product.count - 1,
-          price: cart.price - product.product.price,
+          price: updatedData.cart.price - product.product.price,
         },
       });
       return;

@@ -17,6 +17,19 @@
   color: #8f8f8f;
 }
 
+.like {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #f3f2f1;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
 .header_directions {
   display: flex;
   align-items: center;

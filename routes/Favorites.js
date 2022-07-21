@@ -1,70 +1,56 @@
 const express = require("express");
 const router = express.Router();
 const Favorites = require('../model/Favorites')
-const Mongo = require('../model/Mongo')
-const Shopping = require('../model/Shopping')
+const Products = require('../model/Mongo')
+const Users = require("../model/User");
 
 router.get("/", async (req, res) => {
-  const pro = await Shopping.find()
-    let sum = 0
-    for (let i = 0; i < pro.length; i++) {
-      sum += pro[i].card[i].count    
-    }
-  const product = await Favorites.find()
+  const user = res.locals.user
+  const pro = await Users.findById(user._id).populate("favorites.items.product")
   res.render("favorites", {
     title: "Favorites page",
-    product,
-    sum
+    product: pro.favorites.items,
   });
 });
 
 router.post('/:id', async (req, res) => {
-  const product = await Mongo.findById(req.params.id)
-  const {
-    name,
-    price,
-    discount,
-    star,
-    brand,
-    country,
-    catalog,
-    weight,
-    img
-  } = product
+  const user = res.locals.user
 
-  const favorit = await Favorites.find({
-    name,
-    price,
-    discount,
-    star,
-    brand,
-    country,
-    catalog,
-    weight,
-    img
-  })
-  if(favorit[0] === product[0]){
-    const fav = new Favorites({
-      name,
-  price,
-  discount,
-  star,
-  brand,
-  country,
-  catalog,
-  weight,
-  img,
-  count: 1
-    })
-    await fav.save()
-  }else{
-    
-    favorit[0].count = favorit[0].count + 1
-    
-    await Favorites.findByIdAndUpdate(favorit[0]._id, favorit[0])
+  const isProductYes = user.favorites.items.find((item) => item.product._id == req.params.id);
+  if(isProductYes){
+    res.redirect('/favorites')
+    return;
   }
   
-  res.redirect('/favorites')
+  try {
+    await Users.findOneAndUpdate(
+      { _id: user._id},
+      {
+        $push: { "favorites.items": { product: req.params.id } },
+      }
+    );
+    res.redirect('/favorites')
+    } catch (error) {
+    console.log(error)
+    res.redirect('/')
+  }
+})
+
+router.get('/delete/:id',async (req, res) => {  
+  try {
+    const userUpdate = await Users.findOneAndUpdate(
+      { _id: res.locals.user._id},
+      {
+        $pull:{
+          'favorites.items': {product: req.params.id}
+        }
+      }
+    );
+    res.redirect('/favorites')
+    } catch (error) {
+    console.log(error)
+    res.redirect('/')
+  }
 })
 
 module.exports = router;
