@@ -1,14 +1,25 @@
 const express = require("express");
 const router = express.Router();
 const Mongo = require("../model/Mongo");
-const Shopping = require("../model/Shopping");
 const User = require("../model/User");
 const bcrypt = require("bcrypt");
-const Cart = require("../model/Shopping");
-const user = require("../middleware/user");
 
 router.get("/", async (req, res) => {
   const products = await Mongo.find();
+
+  console.log();
+
+  if (res.locals.user) {
+    products.forEach((item) => {
+      res.locals.user.favorites.items.forEach((element) => {
+        if (item._id == element.product) {
+          console.log(true);
+        } else {
+          console.log(false);
+        }
+      });
+    });
+  }
 
   res.render("home", {
     title: "Home page",

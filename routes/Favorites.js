@@ -1,7 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const Favorites = require('../model/Favorites')
-const Products = require('../model/Mongo')
 const Users = require("../model/User");
 
 router.get("/", async (req, res) => {

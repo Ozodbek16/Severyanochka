@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const Cart = require("../model/Shopping");
 const Users = require("../model/User");
 const Products = require("../model/Mongo");
 
@@ -140,30 +139,30 @@ router.post("/upload/:productid/:mode", async (req, res) => {
   }
 });
 
-router.post("/remove", async (req, res) => {
-  const userid = req.locals.user._id;
-  const { id } = req.body;
+// router.post("/remove", async (req, res) => {
+//   const userid = req.locals.user._id;
+//   const { id } = req.body;
 
-  if (!id || !userid) {
-    res.redirect("/shopping");
-    return;
-  }
+//   if (!id || !userid) {
+//     res.redirect("/shopping");
+//     return;
+//   }
 
-  try {
-    const totalCount = await Cart.findOne({ userid }).populate("userid");
+//   try {
+//     const totalCount = await Cart.findOne({ userid }).populate("userid");
 
-    await Cart.findOneAndUpdate(
-      { userid },
-      {
-        $pull: { products: { _id: id } },
-        totalCount: totalCount.products.length - 1,
-      }
-    );
-    res.send(await Cart.findOne({ userid }).populate("products.product"));
-  } catch (error) {
-    console.log(error);
-    res.json({ ok: true, message: "Product is not removed" });
-  }
-});
+//     await Cart.findOneAndUpdate(
+//       { userid },
+//       {
+//         $pull: { products: { _id: id } },
+//         totalCount: totalCount.products.length - 1,
+//       }
+//     );
+//     res.send(await Cart.findOne({ userid }).populate("products.product"));
+//   } catch (error) {
+//     console.log(error);
+//     res.json({ ok: true, message: "Product is not removed" });
+//   }
+// });
 
 module.exports = router;

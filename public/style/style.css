@@ -74,6 +74,10 @@
   cursor: pointer;
   border: none;
 }
+.heart_like{
+  font-size: 23px;
+  color: red;
+}
 
 .discount_precent {
   position: absolute;
