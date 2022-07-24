@@ -13,7 +13,10 @@ router.get("/", async (req, res) => {
 
 router.post('/:id', async (req, res) => {
   const user = res.locals.user
-
+  if(user === undefined){
+    res.redirect('/')
+    return;
+  }
   const isProductYes = user.favorites.items.find((item) => item.product._id == req.params.id);
   if(isProductYes){
     res.redirect('/favorites')

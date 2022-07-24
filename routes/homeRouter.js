@@ -6,21 +6,6 @@ const bcrypt = require("bcrypt");
 
 router.get("/", async (req, res) => {
   const products = await Mongo.find();
-
-  console.log();
-
-  if (res.locals.user) {
-    products.forEach((item) => {
-      res.locals.user.favorites.items.forEach((element) => {
-        if (item._id == element.product) {
-          console.log(true);
-        } else {
-          console.log(false);
-        }
-      });
-    });
-  }
-
   res.render("home", {
     title: "Home page",
     products,

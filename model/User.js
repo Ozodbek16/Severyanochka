@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const moment = require("moment");
 
 const userSchema = new Schema({
   phone: {
@@ -41,18 +42,18 @@ const userSchema = new Schema({
       {
         count: {
           type: Number,
-          default: 1
+          default: 1,
         },
         product: {
           type: Schema.Types.ObjectId,
           ref: "products",
-          required: true
-        }
-      }
+          required: true,
+        },
+      },
     ],
     price: {
       type: Number,
-      default: 0
+      default: 0,
     },
   },
   favorites: {
@@ -60,12 +61,36 @@ const userSchema = new Schema({
       {
         product: {
           type: Schema.Types.ObjectId,
-          ref: 'products',
+          ref: "products",
+          required: true,
+        },
+      },
+    ],
+  },
+  orders: {
+    items: [
+      {
+        count: {
+          type: Number,
+          default: 1,
+        },
+        time: {
+          type: Date,
           required: true
+        },
+        product: {
+          type: Schema.Types.ObjectId,
+          ref: "products",
+          required: true,
+        },
+        price: {
+          type: Number,
+          default: 0,
         }
-      }
-    ]
-  }
+      },
+    ],
+    
+  },
 });
 
 module.exports = model("user", userSchema);
