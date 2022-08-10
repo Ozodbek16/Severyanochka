@@ -10,10 +10,12 @@ router.get("/", async (req, res) => {
 
 router.post("/add", async (req, res) => {
   const user = await Users.findOne({ _id: res.locals.user._id });
+  const time = new Date().toLocaleDateString()
+  const product = {$each: user.cart.items}
   await Users.findOneAndUpdate(
     { _id: res.locals.user._id },
     {
-      $push: { "orders.items": { $each: user.cart.items }, 'order.items': {price: user.cart.price} },
+      $push: {'orders.items': {product: product['$each'], price: user.cart.price, time}}
     }
   );
   await Users.findOneAndUpdate( 

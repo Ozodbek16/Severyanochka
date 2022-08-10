@@ -70,19 +70,22 @@ const userSchema = new Schema({
   orders: {
     items: [
       {
-        count: {
-          type: Number,
-          default: 1,
-        },
+        product: [
+          {product: {
+            type: Schema.Types.ObjectId,
+            ref: "products",
+            required: true,
+          },count: {
+            type: Number,
+            default: 1,
+          }}
+        ],
+        
         time: {
           type: Date,
           required: true
         },
-        product: {
-          type: Schema.Types.ObjectId,
-          ref: "products",
-          required: true,
-        },
+        
         price: {
           type: Number,
           default: 0,
